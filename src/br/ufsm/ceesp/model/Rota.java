@@ -56,7 +56,7 @@ public class Rota {
         this.ordems = ordems;
     }
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "ID_ARQUIVO_SAIDA")
     public ArquivoSaida getArquivoSaida() {
         return arquivoSaida;

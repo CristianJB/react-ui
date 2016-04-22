@@ -1,6 +1,7 @@
 package br.ufsm.ceesp.controller;
 
 import br.ufsm.ceesp.beans.ServicoDAO;
+import br.ufsm.ceesp.model.ArquivoSaida;
 import br.ufsm.ceesp.model.teste.Servico;
 import br.ufsm.ceesp.util.CargaArquivos;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.Collection;
 import java.util.Date;
 
@@ -50,10 +52,24 @@ public class MapaServicosController {
     }
 
     @RequestMapping(value = "carrega-mapa.html", method = RequestMethod.POST)
-    public String carregarArquivo(MultipartFile arquivoCSV, Model model) throws IOException {
+    public String carregarArquivo(MultipartFile arquivoCSV, MultipartFile arquivoSaidaPlanejado, MultipartFile arquivoSaidaExecutado, Model model) throws IOException, ParseException {
         if (arquivoCSV != null) {
             Collection<Servico> servicos = cargaArquivos.carregaArquivoChamadosComercial(arquivoCSV.getInputStream());
             model.addAttribute("servicos", servicos);
+        }
+        Integer numRotas = 0;
+        if (arquivoSaidaPlanejado != null) {
+            ArquivoSaida arquivoSaida = cargaArquivos.carregaArquivoSaida(arquivoSaidaPlanejado.getInputStream());
+            numRotas += arquivoSaida.getRotas().size();
+            arquivoSaida.setTipo("Planejado");
+        }
+        if (arquivoSaidaExecutado != null) {
+            ArquivoSaida arquivoSaida = cargaArquivos.carregaArquivoSaida(arquivoSaidaExecutado.getInputStream());
+            numRotas += arquivoSaida.getRotas().size();
+            arquivoSaida.setTipo("Executado");
+        }
+        if (numRotas > 0) {
+            model.addAttribute("rotas", numRotas);
         }
         return "carrega-mapa";
     }

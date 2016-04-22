@@ -24,11 +24,20 @@
                     <h2>Upload de Serviços</h2><br/>
                     <label for="fileToUpload">Selecione o arquivo CSV:</label>
                     <input class="form-control" type="file" name="arquivoCSV" id="fileToUpload">
-                    <button type="submit" class="btn btn-primary">Enviar Arquivo</button>
+                    <h2>Upload de Arquivo de Saída Planejado</h2><br/>
+                    <label for="arquivoSaidaPlanejado">Selecione o arquivo:</label>
+                    <input class="form-control" type="file" name="arquivoSaidaPlanejado" id="arquivoSaidaPlanejado">
+                    <h2>Upload de Arquivo de Saída Executado</h2><br/>
+                    <label for="arquivoSaidaExecutado">Selecione o arquivo:</label>
+                    <input class="form-control" type="file" name="arquivoSaidaExecutado" id="arquivoSaidaExecutado">
+                    <button type="submit" class="btn btn-primary">Enviar Arquivos</button>
                 </form>
 
                 <c:if test="${not empty servicos}" >
                     <h4>${fn:length(servicos)} serviços carregados com sucesso!</h4>
+                </c:if>
+                <c:if test="${not empty rotas}" >
+                    <h4>${rotas} rotas carregadas com sucesso!</h4>
                 </c:if>
             </div>
         </div>

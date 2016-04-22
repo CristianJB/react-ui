@@ -6,5 +6,10 @@
     <session-factory>
         <mapping class="br.ufsm.ceesp.model.Localizacao"/>
         <mapping class="br.ufsm.ceesp.model.teste.Servico" />
+        <mapping class="br.ufsm.ceesp.model.OrdemServico" />
+        <mapping class="br.ufsm.ceesp.model.ArquivoSaida" />
+        <mapping class="br.ufsm.ceesp.model.Equipe" />
+        <mapping class="br.ufsm.ceesp.model.OrdemServicoRota" />
+        <mapping class="br.ufsm.ceesp.model.Rota" />
     </session-factory>
 </hibernate-configuration>
