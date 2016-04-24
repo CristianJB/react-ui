@@ -1,16 +1,20 @@
 # pladin
 Repositório do projeto de P&amp;D Planejamento Dinâmico
 
-Requisitos:
+# Requisitos:
 
 1) Intellij IDEA
+
 2) Java SE Development Kit (JDK), version 6 or later.
+
 3) Java app server. E.g. GlassFish Server, version 3.0.1 or later.
 
 
-Como iniciar:
+# Como iniciar:
+
 
 1) Baixe o projeto com git (git clone).
+
 2) Siga este tutorial: https://www.jetbrains.com/help/idea/2016.1/developing-a-java-ee-application.html
 
 
