@@ -20,7 +20,10 @@ Repositório do projeto de P&amp;D Planejamento Dinâmico
 
 Obs.: caso ao executar o projeto, ocorra o erro: "java.lang.ClassNotFoundException: org.springframework.web.context.ContextLoaderListener"
 use uma das soluções apresentadas abaixo:
+
 http://stackoverflow.com/questions/6210757/java-lang-classnotfoundexception-org-springframework-web-context-contextloaderl
+
 http://stackoverflow.com/questions/21237339/java-lang-classnotfoundexception-org-springframework-web-context-contextloaderl
+
 http://java67.blogspot.com.br/2015/06/org.Springframework.Web.Context.ContextLoaderListener.html
 
