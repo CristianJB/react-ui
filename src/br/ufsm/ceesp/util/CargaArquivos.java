@@ -31,17 +31,20 @@ public class CargaArquivos {
     private PlanejDinamicoDAO planejDinamicoDAO;
 
     @Transactional
-    public ArquivoSaida carregaArquivoSaida(InputStream in) throws IOException, ParseException {
+    public ArquivoSaida carregaArquivoSaida(InputStream in, String tipo) throws IOException, ParseException {
         ArquivoSaida arq = new ArquivoSaida();
         arq.setRotas(new ArrayList<>());
         LeitorCSV leitorCSV = new LeitorCSV(in, '\t');
         SimpleDateFormat SDF_data = new SimpleDateFormat("dd/MM/yyyy");
         SimpleDateFormat SDF_dataHora = new SimpleDateFormat("dd/MM/yyyy HH:mm");
         String[] linhaArquivo = leitorCSV.nextLine();
-        String dataHora = SDF_data.format(new Date()) + " " + linhaArquivo[0];
+        String[] primeiraLinha = linhaArquivo[0].split(" ");
+        String dataHora = SDF_data.format(new Date()) + " " + primeiraLinha[0];
         arq.setData(SDF_dataHora.parse(dataHora));
-        arq.setNumEquipes(Integer.parseInt(linhaArquivo[1]));
-        arq.setNumOrdensEmergenciaisNaoAtribuidas(Integer.parseInt(linhaArquivo[2]));
+        arq.setNumEquipes(Integer.parseInt(primeiraLinha[1]));
+        arq.setNumOrdensEmergenciaisNaoAtribuidas(Integer.parseInt(primeiraLinha[2]));
+        arq.setTipo(tipo);
+        sessionFactory.getCurrentSession().save(arq);
         linhaArquivo = leitorCSV.nextLine();
         Rota rota = null;
         while(linhaArquivo != null) {
@@ -62,11 +65,12 @@ public class CargaArquivos {
                 equipe.setLocalizacao(converteParaLocalizacao(lat, longi));
                 rota.setTempoAcumulado(Long.parseLong(linhaArquivo[4]));
                 rota.setEquipe(equipe);
+                rota.setArquivoSaida(arq);
                 sessionFactory.getCurrentSession().save(rota);
             } else if (linhaArquivo.length > 5){
                 OrdemServicoRota ordemRota = new OrdemServicoRota();
                 String seq = linhaArquivo[0].trim();
-                String tipo = linhaArquivo[1].trim();
+                String tipoOrdem = linhaArquivo[1].trim();
                 String num = linhaArquivo[2].trim();
                 String horaChegada = linhaArquivo[5].trim();
                 String horaSaida = linhaArquivo[6].trim();
@@ -82,12 +86,13 @@ public class CargaArquivos {
                     ordem.setNumero(num);
                     sessionFactory.getCurrentSession().save(ordem);
                 }
-                ordem.setTipo(tipo);
+                ordem.setTipo(tipoOrdem);
                 ordem.setLocalizacao(localizacao);
                 ordemRota.setOrdemServico(ordem);
                 ordemRota.setSequencia(Integer.parseInt(seq));
                 ordemRota.setDataHoraChegada(SDF_dataHora.parse(SDF_data.format(new Date()) + " " + horaChegada));
                 ordemRota.setDataHoraSaida(SDF_dataHora.parse(SDF_data.format(new Date()) + " " + horaSaida));
+                ordemRota.setRota(rota);
                 if (tipo.equals("C")) {
                     prioridade = linhaArquivo[7].trim();
                     tempoChegadaAcumudado = linhaArquivo[8].trim();
@@ -121,21 +126,15 @@ public class CargaArquivos {
 
     private Localizacao converteParaLocalizacao(String lat, String longi) {
         Localizacao localizacao = new Localizacao();
-        if (!lat.startsWith("-")) {
-            lat = "-" + lat;
-        }
-        if (!longi.startsWith("-")) {
-            longi = "-" + longi;
-        }
         if (!lat.contains(".")) {
-            localizacao.setLatitude(Double.parseDouble(lat) / 100.0);
+            localizacao.setLatitude(Double.parseDouble("-0." + lat.replace("-", "")) * 100.0);
         } else {
-            localizacao.setLatitude(Double.parseDouble(lat));
+            localizacao.setLatitude(Double.parseDouble("-" + lat.replace("-", "")));
         }
         if (!longi.contains(".")) {
-            localizacao.setLongitude(Double.parseDouble(longi) / 100.0);
+            localizacao.setLongitude(Double.parseDouble("-0." + longi.replace("-", "")) * 100.0);
         } else {
-            localizacao.setLongitude(Double.parseDouble(longi));
+            localizacao.setLongitude(Double.parseDouble("-" + longi.replace("-", "")));
         }
         return localizacao;
     }

@@ -53,20 +53,18 @@ public class MapaServicosController {
 
     @RequestMapping(value = "carrega-mapa.html", method = RequestMethod.POST)
     public String carregarArquivo(MultipartFile arquivoCSV, MultipartFile arquivoSaidaPlanejado, MultipartFile arquivoSaidaExecutado, Model model) throws IOException, ParseException {
-        if (arquivoCSV != null) {
+        if (!arquivoCSV.isEmpty()) {
             Collection<Servico> servicos = cargaArquivos.carregaArquivoChamadosComercial(arquivoCSV.getInputStream());
             model.addAttribute("servicos", servicos);
         }
         Integer numRotas = 0;
-        if (arquivoSaidaPlanejado != null) {
-            ArquivoSaida arquivoSaida = cargaArquivos.carregaArquivoSaida(arquivoSaidaPlanejado.getInputStream());
+        if (!arquivoSaidaPlanejado.isEmpty()) {
+            ArquivoSaida arquivoSaida = cargaArquivos.carregaArquivoSaida(arquivoSaidaPlanejado.getInputStream(), "Planejado");
             numRotas += arquivoSaida.getRotas().size();
-            arquivoSaida.setTipo("Planejado");
         }
-        if (arquivoSaidaExecutado != null) {
-            ArquivoSaida arquivoSaida = cargaArquivos.carregaArquivoSaida(arquivoSaidaExecutado.getInputStream());
+        if (!arquivoSaidaExecutado.isEmpty()) {
+            ArquivoSaida arquivoSaida = cargaArquivos.carregaArquivoSaida(arquivoSaidaExecutado.getInputStream(), "Executado");
             numRotas += arquivoSaida.getRotas().size();
-            arquivoSaida.setTipo("Executado");
         }
         if (numRotas > 0) {
             model.addAttribute("rotas", numRotas);
