@@ -20,14 +20,23 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <%--@elvariable id="rota" type="br.ufsm.ceesp.model.Rota"--%>
-            <c:if test="${not empty rota}" >
-                Rota ID ${rota.id} - Equipe ID ${rota.equipe.id}
+            <p>ROTA PLANEJADA</p>
+            <c:if test="${not empty rotaPlanejada}" >
+                Rota ID ${rotaPlanejada.id} - Equipe ID ${rotaPlanejada.equipe.id}
                 Ordems:
-                <c:forEach items="${rota.ordems}" var="ordem" >
+                <c:forEach items="${rotaPlanejada.ordems}" var="ordem" >
                     ordem: ${ordem.ordemServico.localizacao.latitude}, ${ordem.ordemServico.localizacao.longitude} <br />
                 </c:forEach>
 
+            </c:if>
+
+            <p>ROTA EXECUTADA</p>
+            <c:if test="${not empty rotaExecutada}" >
+                Rota ID ${rotaExecutada.id} - Equipe ID ${rotaExecutada.equipe.id}
+                Ordems:
+                <c:forEach items="${rotaExecutada.ordems}" var="ordem" >
+                    ordem: ${ordem.ordemServico.localizacao.latitude}, ${ordem.ordemServico.localizacao.longitude} <br />
+                </c:forEach>
             </c:if>
 
         </div>

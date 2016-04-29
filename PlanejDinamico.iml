@@ -19,6 +19,7 @@
         <datasource-map>
           <unit-entry name="sessionFactory" value="dataSource" />
         </datasource-map>
+        <naming-strategy-map />
       </configuration>
     </facet>
   </component>
@@ -43,4 +44,3 @@
     <orderEntry type="library" name="commons-io:commons-io:2.4" level="project" />
   </component>
 </module>
-
