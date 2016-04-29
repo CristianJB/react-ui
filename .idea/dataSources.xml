@@ -1,11 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1155386945">
-    <data-source source="LOCAL" name="PostgreSQL - planejdinamico@app.ceesp.ufsm.br" uuid="d2529a64-dda5-435d-a82a-dd59b1c1042f">
-      <driver-ref>postgresql</driver-ref>
+  <component name="DataSourceManagerImpl" format="xml" hash="2404720424">
+    <data-source source="LOCAL" name="PostgreSQL - planejdinamico@app.ceesp.ufsm.br" product="PostgreSQL" version="8.4.10" jdbc-version="3.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.0 JDBC3 (build 801)" uuid="d2529a64-dda5-435d-a82a-dd59b1c1042f">
+      <identifier-quote-string>&quot;</identifier-quote-string>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://app.ceesp.ufsm.br:5432/planejdinamico</jdbc-url>
+      <user-name>planejdinamico</user-name>
+      <user-password>dfdadfc6dfcbdfc4dfcfdfc0dfcedfc3dfc4dfcbdfc7dfc3dfc9dfc5</user-password>
+      <libraries>
+        <library>
+          <url>jar://$PROJECT_DIR$/lib/postgresql-9.0-801.jdbc3.jar!/</url>
+        </library>
+      </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="Pladin - Mysql" product="MySQL" version="5.7.11-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )" uuid="4f64a601-bb59-4ae2-8efc-3e8ff92ccd3f">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://app.ceesp.ufsm.br:3306/planejamento</jdbc-url>
+      <user-name>planejamento</user-name>
+      <user-password>dfdadfc6dfcbdfc4dfcfdfc0dfcbdfc7dfcfdfc4dfdedfc5</user-password>
+      <libraries>
+        <library>
+          <url>jar://$PROJECT_DIR$/lib/mysql-connector-java-5.1.35-bin.jar!/</url>
+        </library>
+        <library>
+          <url>file://$PROJECT_DIR$/lib/mysql-connector-license.txt</url>
+        </library>
+      </libraries>
     </data-source>
   </component>
 </project>
+

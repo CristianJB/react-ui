@@ -1,5 +1,6 @@
 package br.ufsm.ceesp.beans;
 
+import br.ufsm.ceesp.model.Rota;
 import br.ufsm.ceesp.model.teste.Servico;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
@@ -56,4 +57,8 @@ public class ServicoDAO {
         return (Servico) sessionFactory.getCurrentSession().get(Servico.class, id);
     }
 
+    @Transactional
+    public Rota findRotaById(Long idRota) {
+        return (Rota) sessionFactory.getCurrentSession().get(Rota.class, idRota);
+    }
 }
