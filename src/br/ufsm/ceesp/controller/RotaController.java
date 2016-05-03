@@ -28,4 +28,12 @@ public class RotaController {
         return "rota";
     }
 
+    @Transactional
+    @RequestMapping("mapa-rotas.html")
+    public String mapaRotas(Long idRotaPlanejada, Long idRotaExecutada,Model model) {
+        //model.addAttribute("rotaPlanejada", servicoDAO.findRotaById(idRotaPlanejada));
+        //model.addAttribute("rotaExecutada", servicoDAO.findRotaById(idRotaExecutada));
+        return "mapa-rotas";
+    }
+
 }
