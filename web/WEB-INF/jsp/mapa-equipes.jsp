@@ -68,7 +68,7 @@
 
           <div class="form-group">
             <label for="equipe">Selecione a equipe:</label>
-            <select class="form-control" id="equipe" name="equipeSelecionada">
+            <select class="form-control"  id="equipe" name="idEquipe">
               <c:forEach items="${equipes}" var="equipe">
                 <option>${equipe.numero}</option>
               </c:forEach>
@@ -76,16 +76,19 @@
           </div>
           <button type="submit" class="btn btn-primary">Enviar</button><br/><br/>
         </form>
-      ${equipeSelecionada.localizacao.longitude} e ${equipeSelecionada.localizacao.latitude}
+
+        <%--${rotaEquipe.equipe.localizacao.latitude} e ${rotaEquipe.equipe.localizacao.longitude}--%>
+
+
     </div>
   </div>
 
 </div> <!-- /container -->
 
-<div id="map"></div>
+<%--<div id="map"></div>
 <div id="right-panel">
   <p>Total Distance: <span id="total"></span></p>
-</div>
+</div>--%>
 
   <script>
     function initMap() {

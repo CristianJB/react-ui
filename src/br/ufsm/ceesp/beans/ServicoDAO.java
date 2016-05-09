@@ -61,11 +61,4 @@ public class ServicoDAO {
     public Rota findRotaById(Long idRota) {
         return (Rota) sessionFactory.getCurrentSession().get(Rota.class, idRota);
     }
-
-    @Transactional
-    public Collection<Rota> findRotasByEquipe(Long idEquipe) {
-        Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Rota.class);
-        criteria.add(Restrictions.eq("equipe.id", idEquipe));
-        return criteria.list();
-    }
 }
