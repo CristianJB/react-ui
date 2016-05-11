@@ -1,5 +1,6 @@
 package br.ufsm.ceesp.controller;
 
+import br.ufsm.ceesp.beans.PlanejDinamicoDAO;
 import br.ufsm.ceesp.beans.ServicoDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,15 +18,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class RotaController {
 
+
     @Autowired
-    private ServicoDAO servicoDAO;
+    private PlanejDinamicoDAO plaDinDAO;
 
     @Transactional
     @RequestMapping("visualiza-rota.html")
-    public String visualizaRotas(Long idRotaPlanejada, Long idRotaExecutada,Model model) {
-        model.addAttribute("rotaPlanejada", servicoDAO.findRotaById(idRotaPlanejada));
-        model.addAttribute("rotaExecutada", servicoDAO.findRotaById(idRotaExecutada));
-        return "rota";
+    public String visualizaRotas(Long idEquipe, Long idRotaPlanejada, Long idRotaExecutada,Model model) {
+//        model.addAttribute("rotaPlanejada", servicoDAO.findRotaById(idRotaPlanejada));
+//        model.addAttribute("rotaExecutada", servicoDAO.findRotaById(idRotaExecutada));
+        model.addAttribute("equipes", plaDinDAO.findEquipes());
+        model.addAttribute("rotaEquipe", plaDinDAO.findRotasByEquipe(idEquipe));
+        return "visualiza-rota";
     }
 
     @Transactional
@@ -35,5 +39,4 @@ public class RotaController {
         //model.addAttribute("rotaExecutada", servicoDAO.findRotaById(idRotaExecutada));
         return "mapa-rotas";
     }
-
 }

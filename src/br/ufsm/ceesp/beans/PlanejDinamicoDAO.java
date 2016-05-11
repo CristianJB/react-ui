@@ -3,6 +3,7 @@ package br.ufsm.ceesp.beans;
 import br.ufsm.ceesp.model.Equipe;
 import br.ufsm.ceesp.model.OrdemServico;
 import br.ufsm.ceesp.model.Rota;
+import br.ufsm.ceesp.model.teste.Servico;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
@@ -55,4 +56,25 @@ public class PlanejDinamicoDAO {
         return criteria.list();
     }
 
+    @Transactional
+    public Servico findServicoById(Long id) {
+        return (Servico) sessionFactory.getCurrentSession().get(Servico.class, id);
+    }
+
+
+    @Transactional
+    public Collection<Rota> findRotaByIdPlanejada(Long idEquipe) {
+        Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Rota.class);
+        criteria.add(Restrictions.eq("equipe.id", idEquipe));
+        criteria.add(Restrictions.eq("arquivoSaida.tipo", "Planejada"));
+        return criteria.list();
+    }
+
+    @Transactional
+    public Collection<Rota> findRotaByIdExecutada(Long idEquipe) {
+        Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Rota.class);
+        criteria.add(Restrictions.eq("equipe.id", idEquipe));
+        criteria.add(Restrictions.eq("arquivosaida.tipo", "Executada"));
+        return criteria.list();
+    }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2404720424">
+  <component name="DataSourceManagerImpl" format="xml" hash="537906994">
     <data-source source="LOCAL" name="PostgreSQL - planejdinamico@app.ceesp.ufsm.br" uuid="d2529a64-dda5-435d-a82a-dd59b1c1042f">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
