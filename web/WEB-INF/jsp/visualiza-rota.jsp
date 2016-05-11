@@ -63,19 +63,17 @@
                     <th>Equipe</th>
                     <th>Latidude</th>
                     <th>Longitude</th>
-                    <th>Tempo Acumulado</th>
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach items="${rotaEquipe}" var="rota">
-                    <c:forEach items="${rota.ordems}" var="ordem">
+                <c:forEach items="${equipes}" var="equipe">
+
                         <tr>
-                            <td>${rota.equipe.numero}</td>
-                            <td>${rota.equipe.localizacao.latitude}</td>
-                            <td>${rota.equipe.localizacao.longitude}</td>
-                            <td>${rota.tempoAcumulado}</td>
+                            <td>${equipe.numero}</td>
+                            <td>${equipe.localizacao.latitude}</td>
+                            <td>${equipe.localizacao.longitude}</td>
                         </tr>
-                    </c:forEach>
+
                 </c:forEach>
                 </tbody>
             </table>

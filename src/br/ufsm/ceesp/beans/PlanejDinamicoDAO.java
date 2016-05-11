@@ -74,7 +74,8 @@ public class PlanejDinamicoDAO {
     public Collection<Rota> findRotaByIdExecutada(Long idEquipe) {
         Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Rota.class);
         criteria.add(Restrictions.eq("equipe.id", idEquipe));
-        criteria.add(Restrictions.eq("arquivosaida.tipo", "Executada"));
+        Criteria arquivoSaida = criteria.createCriteria("arquivoSaida");
+        arquivoSaida.add(Restrictions.eq("tipo", "Executada"));
         return criteria.list();
     }
 }
