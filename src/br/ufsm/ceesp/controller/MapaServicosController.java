@@ -2,6 +2,7 @@ package br.ufsm.ceesp.controller;
 
 import br.ufsm.ceesp.beans.ServicoDAO;
 import br.ufsm.ceesp.model.ArquivoSaida;
+import br.ufsm.ceesp.model.OrdemServico;
 import br.ufsm.ceesp.model.teste.Servico;
 import br.ufsm.ceesp.util.CargaArquivos;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -80,5 +81,12 @@ public class MapaServicosController {
         return "formulario-servico";
     }
 
+    @RequestMapping(value = "carrega-ordens.html")
+    public String cadastraServico(OrdemServico OrdemServico, Model model) {
+        //if (ordens != null) {
+        //    model.addAttribute("ordens", servicoDAO.listaOrdens("P"));
+        //}
+        return "carrega-ordens";
+    }
 
 }
