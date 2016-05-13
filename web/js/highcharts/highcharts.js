@@ -218,7 +218,7 @@ $(function () {
         },
 
         subtitle: {
-            text: 'Observed in Vik i Sogn, Norway, 2009'
+            text: 'Tempos de serviços e deslocamento'
         },
 
         xAxis: {
@@ -233,17 +233,9 @@ $(function () {
         },
 
         tooltip: {
-            valueSuffix: '°C'
-        },
-
-        plotOptions: {
-            columnrange: {
-                dataLabels: {
-                    enabled: true,
-                    formatter: function () {
-                        return this.y + 'h';
-                    }
-                }
+            formatter: function () {
+                console.log(this);
+                return '<b>' + this.series.name  + '</b> Início do turno: <b>' + Highcharts.dateFormat('%H:%M', this.point.low) + '</b> Final do turno: <b>' + Highcharts.dateFormat('%H:%M', this.point.high) + '</b>';
             }
         },
 
@@ -252,14 +244,25 @@ $(function () {
         },
 
         series: [{
-            name: 'Horário de serviço',
+            name: 'Planejado',
             data: [
                 //                [Date.UTC(2013, mês(jan=0), dia, h, min), 12.7],
-                [Date.UTC(2016, 7, 2, 21, 1, 30), Date.UTC(2016, 7, 3, 4, 2, 30)],
-                [Date.UTC(2016, 7, 2, 21, 5, 0), Date.UTC(2016, 7, 3, 5, 8, 0)],
-                [Date.UTC(2016, 7, 2, 21, 20, 30), Date.UTC(2016, 7, 3, 6, 23, 0)],
-                [Date.UTC(2016, 7, 2, 21, 21, 0), Date.UTC(2016, 7, 3, 5, 22, 0)],
-                [Date.UTC(2016, 7, 2, 21, 22, 0), Date.UTC(2016, 7, 3, 5, 23, 0)],
+                [Date.UTC(2016, 7, 2, 1, 30), Date.UTC(2016, 7, 2, 7, 30)],
+                [Date.UTC(2016, 7, 2, 3, 0), Date.UTC(2016, 7, 2, 11, 0)],
+                [Date.UTC(2016, 7, 2, 10, 30), Date.UTC(2016, 7, 2, 18, 0)],
+                [Date.UTC(2016, 7, 2,  16, 0), Date.UTC(2016, 7, 2, 22, 0)],
+                [Date.UTC(2016, 7, 2,  20, 0), Date.UTC(2016, 7, 2, 23, 0)]
+            ]
+
+        }, {
+            name: 'Executado',
+            data: [
+                //                [Date.UTC(2013, mês(jan=0), dia, h, min), 12.7],
+                [Date.UTC(2016, 7, 2, 1, 00), Date.UTC(2016, 7, 2, 7, 00)],
+                [Date.UTC(2016, 7, 2, 3, 30), Date.UTC(2016, 7, 2, 9, 30)],
+                [Date.UTC(2016, 7, 2, 10, 0), Date.UTC(2016, 7, 2, 18, 30)],
+                [Date.UTC(2016, 7, 2,  16, 30), Date.UTC(2016, 7, 2, 22, 30)],
+                [Date.UTC(2016, 7, 2,  20, 30), Date.UTC(2016, 7, 2, 23, 30)]
             ]
         }]
 
