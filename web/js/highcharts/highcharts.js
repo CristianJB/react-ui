@@ -21,23 +21,23 @@ $(function () {
             text: 'Deslocamento vs Tempo de Serviço'
         },
 
-      //  xAxis: {
+        //  xAxis: {
         //    categories: ['Equipe 11', 'Equipe 2', 'Equipe 3', 'Equipe 4', 'Equipe 5']
-       // },
+        // },
 
-    /*    yAxis: [{
-            min: 0,
-            title: {
-                text: 'Rainfall (mm)'
-            }
-        }, {
-            min: 0,
-            opposite:true, //optional, you can have it on the same side.
-            title: {
-                text: 'Temp (K)'
-            }
-        }],
-*/
+        /*    yAxis: [{
+         min: 0,
+         title: {
+         text: 'Rainfall (mm)'
+         }
+         }, {
+         min: 0,
+         opposite:true, //optional, you can have it on the same side.
+         title: {
+         text: 'Temp (K)'
+         }
+         }],
+         */
         xAxis: {
             categories: ['Equipe 233:  Planejado <br>  Executado', 'Equipe 244: Planejado <br>Executado', 'Equipe 923: Planejado <br>Executado', 'Equipe 4: Planejado <br>Executado', 'Equipe 5: Planejado <br>Executado']
         },
@@ -108,7 +108,7 @@ $(function () {
 
     });
 });
-    // container-one with single value
+// container-one with single value
 $(function () {
     $('#container-1barra-2x').highcharts({
 
@@ -201,6 +201,8 @@ $(function () {
 });
 
 //column range
+
+
 $(function () {
 
     $('#columnrange').highcharts({
@@ -216,52 +218,23 @@ $(function () {
         },
 
         subtitle: {
-            text: 'Observed in Vik i Sogn, Norway'
+            text: 'Observed in Vik i Sogn, Norway, 2009'
         },
 
         xAxis: {
-            categories: ['Equipe 233:  Planejado <br>  Executado', 'Equipe 244: Planejado <br>Executado', 'Equipe 923: Planejado <br>Executado', 'Equipe 4: Planejado <br>Executado', 'Equipe 5: Planejado <br>Executado']
+            categories: ['Equipe 233:  Planejado <br>  Executado', 'Equipe 244: Planejado <br>Executado', 'Equipe 923: Planejado <br>Executado', 'Equipe 444: Planejado <br>Executado', 'Equipe 555: Planejado <br>Executado']
         },
 
-       /* yAxis: {
-            title: {
-                text: 'Tempo ( horas )'
-            }
-        },
-        tooltip: {
-        valueSuffix: 'h'
-        },
-*/
-        //  teste horas eixo y (na verdade x, está invertido)
         yAxis: {
-            title: {
-                enabled: true,
-                text: 'Tempo(horas)'
-            },
             type: 'datetime',
+            title: {
+                text: 'Tempo(horas)'
+            }
+        },
 
-            labels: {
-                formatter: function () {
-                    return Highcharts.dateFormat('%H:%M', this.value);
-                },
-                dateTimeLabelFormats: {
-                    minute: '%H:%M',
-                    hour: '%H:%M',
-                    day: '%e. %b',
-                    week: '%e. %b',
-                    month: '%b \'%y',
-                    year: '%Y'
-                }
-            }
-        },
         tooltip: {
-            formatter: function() {
-                return ''+
-                    "" +
-                    'Time: '+ Highcharts.dateFormat('%H:%M', this.x);
-            }
+            valueSuffix: '°C'
         },
-// final teste eixo y
 
         plotOptions: {
             columnrange: {
@@ -281,16 +254,14 @@ $(function () {
         series: [{
             name: 'Horário de serviço',
             data: [
-//                [Date.UTC(2013, mês, dia, h, min), 12.7],
-                [Date.UTC(2013, 0, 1, 1, 30), 12.7],
-                [Date.UTC(2013, 3, 22, 1, 15), 13.5],
-                [Date.UTC(2013, 3, 22, 1, 15), 15.5],
-                [Date.UTC(2013, 3, 22, 1, 15), 16.5],
-                [Date.UTC(2013, 3, 22, 1, 15), 18.8]
+                //                [Date.UTC(2013, mês(jan=0), dia, h, min), 12.7],
+                [Date.UTC(2016, 7, 2, 21, 1, 30), Date.UTC(2016, 7, 3, 4, 2, 30)],
+                [Date.UTC(2016, 7, 2, 21, 5, 0), Date.UTC(2016, 7, 3, 5, 8, 0)],
+                [Date.UTC(2016, 7, 2, 21, 20, 30), Date.UTC(2016, 7, 3, 6, 23, 0)],
+                [Date.UTC(2016, 7, 2, 21, 21, 0), Date.UTC(2016, 7, 3, 5, 22, 0)],
+                [Date.UTC(2016, 7, 2, 21, 22, 0), Date.UTC(2016, 7, 3, 5, 23, 0)],
             ]
         }]
-
-
 
     });
 
