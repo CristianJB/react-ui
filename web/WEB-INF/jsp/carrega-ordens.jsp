@@ -49,10 +49,14 @@
         var markers = [];
         var markers2 = [];
         var icone;
+
+        var centerMap = { "lat" : "-29.695060000" , "long" : "-53.725150000" };
         function initMap() {
+            var myLatlng = new google.maps.LatLng( centerMap.lat, centerMap.long );
             map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 11,
-                center: {lat: -29.695060000, lng: -53.725150000}
+                center: myLatlng
+//                center: {lat: -29.695060000, lng: -53.725150000}
             });
         }
 
@@ -487,7 +491,7 @@
                 info: information,
                 icon: {
                         path: google.maps.SymbolPath.CIRCLE,
-                        scale: 5,
+                        scale: 4,
                         fillColor: 'black',
                         fillOpacity: 0.8,
                         strokeColor: 'blue',

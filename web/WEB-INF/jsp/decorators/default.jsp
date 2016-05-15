@@ -24,7 +24,7 @@
   <title><decorator:title default="Serviços" /></title>
 
   <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="all"/>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
   <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
   <link rel="stylesheet" href="fonts/fonts.googleapis.com.css" />
@@ -32,6 +32,11 @@
   <link rel="stylesheet" href="ace/ace-ie.min.css" />
   <link rel="stylesheet" href="ace/ace.min.css" />
   <%--<script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>--%>
+
+
+  <!-- page specific plugin styles -->
+  <link rel="stylesheet" href="ace/jquery-ui.custom.min.css" />
+  <link rel="stylesheet" href="ace/chosen.min.css" />
   <decorator:head />
 
 </head>
@@ -120,6 +125,7 @@
 
     <!--COMEÇA CÓDIGO LOGIN-->
     <div class="navbar-buttons navbar-header pull-right  collapse navbar-collapse" role="navigation">
+
       <ul class="nav ace-nav">
         <li class="light-blue">
           <a data-toggle="dropdown" href="#" class="dropdown-toggle">
@@ -152,7 +158,7 @@
                         <li>
                           <a href="#">
                             <div class="clearfix">
-                              <span class="pull-left">Software Update</span>
+                              <span class="pull-left">Manutenção corretiva</span>
                               <span class="pull-right">65%</span>
                             </div>
 
@@ -165,7 +171,7 @@
                         <li>
                           <a href="#">
                             <div class="clearfix">
-                              <span class="pull-left">Hardware Upgrade</span>
+                              <span class="pull-left">Manutenção preventiva</span>
                               <span class="pull-right">35%</span>
                             </div>
 
@@ -178,7 +184,7 @@
                         <li>
                           <a href="#">
                             <div class="clearfix">
-                              <span class="pull-left">Unit Testing</span>
+                              <span class="pull-left">Compra de equipamentos</span>
                               <span class="pull-right">15%</span>
                             </div>
 
@@ -191,7 +197,7 @@
                         <li>
                           <a href="#">
                             <div class="clearfix">
-                              <span class="pull-left">Bug Fixes</span>
+                              <span class="pull-left">Emergências atendidas</span>
                               <span class="pull-right">90%</span>
                             </div>
 
@@ -221,7 +227,7 @@
                             <img src="avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
 																<span class="msg-body">
 																	<span class="msg-title">
-																		<span class="blue">Alex:</span>
+																		<span class="blue">Magdiel:</span>
 																		Ciao sociis natoque penatibus et auctor ...
 																	</span>
 
@@ -255,7 +261,7 @@
                             <img src="avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
 																<span class="msg-body">
 																	<span class="msg-title">
-																		<span class="blue">Bob:</span>
+																		<span class="blue">Vinícius:</span>
 																		Nullam quis risus eget urna mollis ornare ...
 																	</span>
 
@@ -324,7 +330,7 @@
             <i class="ace-icon fa fa-user"></i>
 								<span class="user-info">
 									<small>Welcome,</small>
-									Magdiel
+									Usuário
 								</span>
 
             <i class="ace-icon fa fa-caret-down"></i>
@@ -362,7 +368,7 @@
 
 
     <ul class="nav nav-list">
-
+      <!-- painel principal-->
       <li class="hover" style="border-left:1px solid #e4e6e9">
         <a href="#" class="dropdown-toggle">
           <i class="menu-icon fa fa-desktop"></i>
@@ -376,43 +382,60 @@
 
         <ul class="submenu">
 
-          <!-- Seleção das equipes -->
-          <li class="hover" >
+          <li class="hover">
+            <a href="carrega-ordens.html">
+              <i class="menu-icon fa fa-caret-right"></i>
+              Funções Objetivo
+            </a>
+            <b class="arrow"></b>
+          </li>
+
+          <li class="hover">
+            <a href="carrega-ordens.html">
+              <i class="menu-icon fa fa-caret-right"></i>
+              Parâmetros
+            </a>
+            <b class="arrow"></b>
+          </li>
+
+        </ul>
+      </li>
+
+      <!-- Posto tecnico-->
+      <li class="hover pull-right" style="border-right:1px solid #e4e6e9">
+        <a href="#" class="dropdown-toggle" >
+          <i class="menu-icon fa fa-users"></i>
+							<span class="menu-text">
+								Posto Técnico/Equipes
+							</span>
+          <b class="arrow fa fa-angle-down"></b>
+        </a>
+        <b class="arrow"></b>
+
+        <ul class="submenu">
+
+          <!-- Posto técnico Santa Maria -->
+          <li class="hover" id="PT1"  >
             <a href="#" class="dropdown-toggle">
               <i class="menu-icon fa fa-caret-right"></i>
-              Equipes
+              Posto técnico 1
               <b class="arrow fa fa-angle-down"></b>
             </a>
             <b class="arrow"></b>
+
             <ul class="submenu">
               <li class="hover">
-                <div class="ace-settings-item">
-                  <input id="check-1" type="checkbox" class="ace ace-checkbox-2"  onclick="functioncheck();" />
+                <a href="#" >
+                  <input id="check-PT1" type="checkbox" class="ace ace-checkbox-2"  onclick="functioncheck();" />
                   <label class="lbl" > Todas equipes </label>
-                </div>
+                </a>
                 <b class="arrow"></b>
               </li>
 
-              <li class="hover">
-                <div class="ace-settings-item">
-                  <input id="check-2" type="checkbox" class="ace ace-checkbox-2"  onclick="functioncheck();" />
-                  <label class="lbl" > Equipe 233 </label>
-                </div>
-                <b class="arrow"></b>
-              </li>
-
-              <li class="hover">
-                <div class="ace-settings-item">
-                  <input id="check-3" type="checkbox" class="ace ace-checkbox-2"  onclick="functioncheck();" />
-                  <label class="lbl"> Equipe 244 </label>
-                </div>
-                <b class="arrow"></b>
-              </li>
-
-              <!--  menu 4 levels  -->
+              <!--  Equipe 913  -->
               <li class="hover">
                 <a href="#" >
-                  <input id="check-4" type="checkbox" class="ace ace-checkbox-2"  onclick="functioncheck();" />
+                  <input id="check-913" type="checkbox" class="ace ace-checkbox-2"  onclick="functioncheck();" />
                   <label class="lbl"> Equipe 913 </label>
                   <b class="arrow fa fa-angle-down"></b>
                 </a>
@@ -421,7 +444,7 @@
                 <ul class="submenu">
                   <li class="hover">
                     <a href="#">
-                      <input id="check-4.1" type="checkbox" class="ace ace-checkbox-2"  onclick="functioncheck();" />
+                      <input id="check-913.1" type="checkbox" class="ace ace-checkbox-2"  onclick="functioncheck();" />
                       <label class="lbl"> Planejado  </label>
                     </a>
                     <b class="arrow"></b>
@@ -429,384 +452,197 @@
 
                   <li class="hover">
                     <a href="#">
-                      <input id="check-4.2" type="checkbox" class="ace ace-checkbox-2"  onclick="functioncheck();" />
+                      <input id="check-913.2" type="checkbox" class="ace ace-checkbox-2"  onclick="functioncheck();" />
                       <label class="lbl"> Executado  </label>
                     </a>
                     <b class="arrow"></b>
                   </li>
                 </ul>
-              </li>
-              <!--  funções check  -->
-              <script type="text/javascript">
-                function functioncheck() {
-                  clearOverlays();
-                  setMapOnAll(null);
-                  if(document.getElementById("check-1").checked == true){
-                    //setAllMarkers()
-                    setEquipeMarkers('233','PlanExec');
-                    setEquipeMarkers('244','PlanExec');
-                    setEquipeMarkers('913','PlanExec');
-                  }
-                  if(document.getElementById("check-2").checked == true){
-                    setEquipeMarkers('233','PlanExec');
-                  }
-                  if(document.getElementById("check-3").checked == true){
-                    setEquipeMarkers('244','PlanExec');
-                  }
-                  if(document.getElementById("check-4").checked == true){
-                    setEquipeMarkers('913','PlanExec');
-                  }
-                  if(document.getElementById("check-4.1").checked == true){
-                    setEquipeMarkers('913','Plan');
-                  }
-                  if(document.getElementById("check-4.2").checked == true){
-                    setEquipeMarkers('913','Exec');
-                  }
-                }
-              </script>
 
+              </li>
             </ul>
           </li>
-          <!-- Fim seleção das equipes -->
 
-          <li class="hover">
-            <a href="typography.html">
-              <i class="menu-icon fa fa-caret-right"></i>
-              Funções Objetivo
-            </a>
-            <b class="arrow"></b>
-          </li>
-
-          <li class="hover">
-            <a href="elements.html">
-              <i class="menu-icon fa fa-caret-right"></i>
-              Parâmetros
-            </a>
-            <b class="arrow"></b>
-          </li>
-
-          <li class="hover">
+          <!-- PT Canoas -->
+          <li class="hover" id="PT2">
             <a href="#" class="dropdown-toggle">
               <i class="menu-icon fa fa-caret-right"></i>
-
-              Three Level Menu
+              Posto técnico 2
               <b class="arrow fa fa-angle-down"></b>
             </a>
-
             <b class="arrow"></b>
 
             <ul class="submenu">
               <li class="hover">
-                <a href="#">
-                  <i class="menu-icon fa fa-leaf green"></i>
-                  Item #1
+                <a href="#" >
+                  <input id="check-PT2" type="checkbox" class="ace ace-checkbox-2"  onclick="functioncheck();" />
+                  <label class="lbl" > Todas equipes </label>
                 </a>
-
                 <b class="arrow"></b>
               </li>
 
               <li class="hover">
-                <a href="#" class="dropdown-toggle">
-                  <i class="menu-icon fa fa-pencil orange"></i>
-
-                  4th level
+                <a href="#" >
+                  <input id="check-233" type="checkbox" class="ace ace-checkbox-2"  onclick="functioncheck();" />
+                  <label class="lbl" > Equipe 233 </label>
                   <b class="arrow fa fa-angle-down"></b>
                 </a>
-
                 <b class="arrow"></b>
 
-                <ul class="submenu">
-                  <li class="hover">
-                    <a href="#">
-                      <i class="menu-icon fa fa-plus purple"></i>
-                      Add Product
-                    </a>
+                  <ul class="submenu">
+                    <li class="hover">
+                      <a href="#">
+                        <input id="check-233.1" type="checkbox" class="ace ace-checkbox-2"  onclick="functioncheck();" />
+                        <label class="lbl"> Planejado  </label>
+                      </a>
+                      <b class="arrow"></b>
+                    </li>
 
-                    <b class="arrow"></b>
-                  </li>
+                    <li class="hover">
+                      <a href="#">
+                        <input id="check-233.2" type="checkbox" class="ace ace-checkbox-2"  onclick="functioncheck();" />
+                        <label class="lbl"> Executado  </label>
+                      </a>
+                      <b class="arrow"></b>
+                    </li>
+                  </ul>
+              </li>
 
-                  <li class="hover">
-                    <a href="#">
-                      <i class="menu-icon fa fa-eye pink"></i>
-                      View Products
-                    </a>
+              <li class="hover">
+                <a href="#" >
+                  <input id="check-244" type="checkbox" class="ace ace-checkbox-2"  onclick="functioncheck();" />
+                  <label class="lbl"> Equipe 244 </label>
+                  <b class="arrow fa fa-angle-down"></b>
+                </a>
+                <b class="arrow"></b>
 
-                    <b class="arrow"></b>
-                  </li>
-                </ul>
+                  <ul class="submenu">
+                    <li class="hover">
+                      <a href="#">
+                        <input id="check-244.1" type="checkbox" class="ace ace-checkbox-2"  onclick="functioncheck();" />
+                        <label class="lbl"> Planejado  </label>
+                      </a>
+                      <b class="arrow"></b>
+                    </li>
+
+                    <li class="hover">
+                      <a href="#">
+                        <input id="check-244.2" type="checkbox" class="ace ace-checkbox-2"  onclick="functioncheck();" />
+                        <label class="lbl"> Executado  </label>
+                      </a>
+                      <b class="arrow"></b>
+                    </li>
+                  </ul>
+
               </li>
             </ul>
           </li>
-        </ul>
-      </li>
-
-      <li class="hover">
-        <a href="index.html">
-          <i class="menu-icon fa fa-tachometer"></i>
-          <span class="menu-text"> Dashboard </span>
-        </a>
-
-        <b class="arrow"></b>
-      </li>
-      <li class="hover">
-        <a href="#" class="dropdown-toggle">
-          <i class="menu-icon fa fa-list"></i>
-          <span class="menu-text"> Tables </span>
-
-          <b class="arrow fa fa-angle-down"></b>
-        </a>
-
-        <b class="arrow"></b>
-
-        <ul class="submenu">
-          <li class="hover">
-            <a href="tables.html">
+          <!-- PT 3 -->
+          <li class="hover" id="PT3">
+            <a href="carrega-ordens.html">
               <i class="menu-icon fa fa-caret-right"></i>
-              Simple &amp; Dynamic
+              Posto técnico 3
             </a>
-
-            <b class="arrow"></b>
-          </li>
-
-          <li class="hover">
-            <a href="jqgrid.html">
-              <i class="menu-icon fa fa-caret-right"></i>
-              jqGrid plugin
-            </a>
-
             <b class="arrow"></b>
           </li>
         </ul>
+
+        <!--  funções check  -->
+        <script type="text/javascript">
+          function functioncheck() {
+            clearOverlays();
+            setMapOnAll(null);
+            if(document.getElementById("check-PT1").checked == true){
+              //setAllMarkers()
+              setEquipeMarkers('913','PlanExec');
+            }
+
+            if(document.getElementById("check-PT2").checked == true){
+              //setAllMarkers()
+              setEquipeMarkers('233','PlanExec');
+              setEquipeMarkers('244','PlanExec');
+            }
+
+            if(document.getElementById("check-233").checked == true){
+              setEquipeMarkers('233','PlanExec');
+            }
+              if(document.getElementById("check-233.1").checked == true){
+                setEquipeMarkers('233','Plan');
+              }
+              if(document.getElementById("check-233.2").checked == true){
+                setEquipeMarkers('233','Exec');
+              }
+
+            if(document.getElementById("check-244").checked == true){
+              setEquipeMarkers('244','PlanExec');
+            }
+              if(document.getElementById("check-244.1").checked == true){
+                setEquipeMarkers('244','Plan');
+              }
+              if(document.getElementById("check-244.2").checked == true){
+                setEquipeMarkers('244','Exec');
+              }
+
+            if(document.getElementById("check-913").checked == true){
+              setEquipeMarkers('913','PlanExec');
+            }
+              if(document.getElementById("check-913.1").checked == true){
+                setEquipeMarkers('913','Plan');
+              }
+              if(document.getElementById("check-913.2").checked == true){
+                setEquipeMarkers('913','Exec');
+              }
+          }
+        </script>
+
+        <!-- Fim seleção das equipes -->
       </li>
 
-      <li class="hover">
-        <a href="#" class="dropdown-toggle">
-          <i class="menu-icon fa fa-pencil-square-o"></i>
-          <span class="menu-text"> Forms </span>
+      <!-- Bases-->
+      <li class="hover pull-right" style="height:44px;">
+        <div class="widget-main">
+          <div style="width:200px;">
+            <select class="chosen-select form-control" id="select-base" onchange="base()" data-placeholder="Escolha uma base...">
+              <option value="0">  </option>
+              <option value="1">Base Santa Maria</option>
+              <option value="2">Base Canoas</option>
+              <option value="3">Base 3</option>
+              <option value="4">Base 4</option>
+              <option value="5">Base 5</option>
+              <option value="6">Base 6</option>
+              <option value="7">Base 7</option>
+              <option value="8">Base 8</option>
+              <option value="9">Base 9</option>
+              <option value="10">Base 10</option>
+            </select>
 
-          <b class="arrow fa fa-angle-down"></b>
-        </a>
+              <script type="text/javascript">
 
-        <b class="arrow"></b>
+                function base() {
+                  var e = document.getElementById("select-base");
+                  var baseOptions = e.options[e.selectedIndex].value;
+                  document.getElementById("PT1").style.display = "none";
+                  document.getElementById("PT2").style.display = "none";
+                  document.getElementById("PT3").style.display = "none";
 
-        <ul class="submenu">
-          <li class="hover">
-            <a href="form-elements.html">
-              <i class="menu-icon fa fa-caret-right"></i>
-              Form Elements
-            </a>
+                  if(baseOptions==1){
+                    centerMap = { "lat" : "-29.695060000" , "long" : "-53.725150000" };
+                    initMap();
+                    document.getElementById("PT1").style.display = "block";
+                  }
+                  if(baseOptions==2){
+                    centerMap = { "lat" : "-29.892960000" , "long" : "-51.128680000" };
+                    initMap();
+                    document.getElementById("PT2").style.display = "block";
+                  }
+                  if(baseOptions==3){
+                    document.getElementById("PT3").style.display = "block";
+                  }
+                }
+              </script>
 
-            <b class="arrow"></b>
-          </li>
-
-          <li class="hover">
-            <a href="form-elements-2.html">
-              <i class="menu-icon fa fa-caret-right"></i>
-              Form Elements 2
-            </a>
-
-            <b class="arrow"></b>
-          </li>
-
-          <li class="hover">
-            <a href="form-wizard.html">
-              <i class="menu-icon fa fa-caret-right"></i>
-              Wizard &amp; Validation
-            </a>
-
-            <b class="arrow"></b>
-          </li>
-
-          <li class="hover">
-            <a href="wysiwyg.html">
-              <i class="menu-icon fa fa-caret-right"></i>
-              Wysiwyg &amp; Markdown
-            </a>
-
-            <b class="arrow"></b>
-          </li>
-
-          <li class="hover">
-            <a href="dropzone.html">
-              <i class="menu-icon fa fa-caret-right"></i>
-              Dropzone File Upload
-            </a>
-
-            <b class="arrow"></b>
-          </li>
-        </ul>
-      </li>
-
-      <li class="hover">
-        <a href="widgets.html">
-          <i class="menu-icon fa fa-list-alt"></i>
-          <span class="menu-text"> Widgets </span>
-        </a>
-
-        <b class="arrow"></b>
-      </li>
-
-      <li class="hover">
-        <a href="calendar.html">
-          <i class="menu-icon fa fa-calendar"></i>
-            <span class="menu-text">
-                Calendar
-
-                <span class="badge badge-transparent tooltip-error" title="2 Important Events">
-                    <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
-                </span>
-            </span>
-        </a>
-
-        <b class="arrow"></b>
-      </li>
-
-      <li class="hover">
-        <a href="gallery.html">
-          <i class="menu-icon fa fa-picture-o"></i>
-          <span class="menu-text"> Gallery </span>
-        </a>
-
-        <b class="arrow"></b>
-      </li>
-
-      <li class="hover">
-        <a href="#" class="dropdown-toggle">
-          <i class="menu-icon fa fa-tag"></i>
-          <span class="menu-text"> More Pages </span>
-
-          <b class="arrow fa fa-angle-down"></b>
-        </a>
-
-        <b class="arrow"></b>
-
-        <ul class="submenu">
-          <li class="hover">
-            <a href="profile.html">
-              <i class="menu-icon fa fa-caret-right"></i>
-              User Profile
-            </a>
-
-            <b class="arrow"></b>
-          </li>
-
-          <li class="hover">
-            <a href="inbox.html">
-              <i class="menu-icon fa fa-caret-right"></i>
-              Inbox
-            </a>
-
-            <b class="arrow"></b>
-          </li>
-
-          <li class="hover">
-            <a href="pricing.html">
-              <i class="menu-icon fa fa-caret-right"></i>
-              Pricing Tables
-            </a>
-
-            <b class="arrow"></b>
-          </li>
-
-          <li class="hover">
-            <a href="invoice.html">
-              <i class="menu-icon fa fa-caret-right"></i>
-              Invoice
-            </a>
-
-            <b class="arrow"></b>
-          </li>
-
-          <li class="hover">
-            <a href="timeline.html">
-              <i class="menu-icon fa fa-caret-right"></i>
-              Timeline
-            </a>
-
-            <b class="arrow"></b>
-          </li>
-
-          <li class="hover">
-            <a href="email.html">
-              <i class="menu-icon fa fa-caret-right"></i>
-              Email Templates
-            </a>
-
-            <b class="arrow"></b>
-          </li>
-
-          <li class="hover">
-            <a href="login.html">
-              <i class="menu-icon fa fa-caret-right"></i>
-              Login &amp; Register
-            </a>
-
-            <b class="arrow"></b>
-          </li>
-        </ul>
-      </li>
-
-      <li class="hover">
-        <a href="#" class="dropdown-toggle">
-          <i class="menu-icon fa fa-file-o"></i>
-
-							<span class="menu-text">
-								Other Pages
-
-								<span class="badge badge-primary">5</span>
-							</span>
-
-          <b class="arrow fa fa-angle-down"></b>
-        </a>
-
-        <b class="arrow"></b>
-
-        <ul class="submenu">
-          <li class="hover">
-            <a href="faq.html">
-              <i class="menu-icon fa fa-caret-right"></i>
-              FAQ
-            </a>
-
-            <b class="arrow"></b>
-          </li>
-
-          <li class="hover">
-            <a href="error-404.html">
-              <i class="menu-icon fa fa-caret-right"></i>
-              Error 404
-            </a>
-
-            <b class="arrow"></b>
-          </li>
-
-          <li class="hover">
-            <a href="error-500.html">
-              <i class="menu-icon fa fa-caret-right"></i>
-              Error 500
-            </a>
-
-            <b class="arrow"></b>
-          </li>
-
-          <li class="hover">
-            <a href="grid.html">
-              <i class="menu-icon fa fa-caret-right"></i>
-              Grid
-            </a>
-
-            <b class="arrow"></b>
-          </li>
-
-          <li class="hover">
-            <a href="blank.html">
-              <i class="menu-icon fa fa-caret-right"></i>
-              Blank Page
-            </a>
-
-            <b class="arrow"></b>
-          </li>
-        </ul>
+          </div>
+        </div>
       </li>
     </ul><!-- /.nav-list -->
 
@@ -822,8 +658,9 @@
   <div class="panel-body">
     <div id="columnrange" style="position:absolute;bottom:4%; left:50%;height:350px;z-index:1"></div>
   </div>
-
+</div>
   <!-- page specific plugin scripts -->
+
 
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
@@ -845,8 +682,13 @@
   <script type="text/javascript" src="js/ace/html5shiv.min.js"></script>
   <script type="text/javascript" src="js/ace/respond.min.js"></script>
 
+<!-- aqui-->
+
+  <script type="text/javascript" src="js/ace/chosen.jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.autosize.min.js"></script>
+
   <script type="text/javascript">
-    jQuery(function($) {
+  jQuery(function($) {
       var $sidebar = $('.sidebar').eq(0);
       if( !$sidebar.hasClass('h-sidebar') ) return;
 
@@ -866,7 +708,6 @@
           $window.off('scroll.ace.top_menu')
           return;
         }
-
 
         var done = false;
         $window.on('scroll.ace.top_menu', function(e) {
@@ -897,10 +738,81 @@
       $(window).on('resize.ace.top_menu', function() {
         $(document).triggerHandler('settings.ace.top_menu', ['sidebar_fixed' , $sidebar.hasClass('sidebar-fixed')]);
       });
+
+
+
+    //related to form-elements
+      if(!ace.vars['touch']) {
+        $('.chosen-select').chosen({allow_single_deselect:true});
+        //resize the chosen on window resize
+
+        $(window)
+                .off('resize.chosen')
+                .on('resize.chosen', function() {
+                  $('.chosen-select').each(function() {
+                    var $this = $(this);
+                    $this.next().css({'width': $this.parent().width()});
+                  })
+                }).trigger('resize.chosen');
+        //resize chosen on sidebar collapse/expand
+        $(document).on('settings.ace.chosen', function(e, event_name, event_val) {
+          if(event_name != 'sidebar_collapsed') return;
+          $('.chosen-select').each(function() {
+            var $this = $(this);
+            $this.next().css({'width': $this.parent().width()});
+          })
+        });
+
+      }
+
+      $('textarea[class*=autosize]').autosize({append: "\n"});
+      $('textarea.limited').inputlimiter({
+        remText: '%n character%s remaining...',
+        limitText: 'max allowed : %n.'
+      });
+
+      $.mask.definitions['~']='[+-]';
+      $('.input-mask-date').mask('99/99/9999');
+      $('.input-mask-phone').mask('(999) 999-9999');
+      $('.input-mask-eyescript').mask('~9.99 ~9.99 999');
+      $(".input-mask-product").mask("a*-999-a999",{placeholder:" ",completed:function(){alert("You typed the following: "+this.val());}});
+
+
+      var tag_input = $('#form-field-tags');
+      try{
+        tag_input.tag(
+                {
+                  placeholder:tag_input.attr('placeholder'),
+                  //enable typeahead by specifying the source array
+                  source: ace.vars['BASES'],//defined in ace.js >> ace.enable_search_ahead
+                }
+        )
+
+        //programmatically add a new
+        var $tag_obj = $('#form-field-tags').data('tag');
+        $tag_obj.add('Programmatically Added');
+      }
+      catch(e) {
+        //display a textarea for old IE, because it doesn't support this plugin or another one I tried!
+        tag_input.after('<textarea id="'+tag_input.attr('id')+'" name="'+tag_input.attr('name')+'" rows="3">'+tag_input.val()+'</textarea>').remove();
+        //$('#form-field-tags').autosize({append: "\n"});
+      }
+
+      //chosen plugin inside a modal will have a zero width because the select element is originally hidden
+      //and its width cannot be determined.
+      //so we set the width after modal is show
+      $('#modal-form').on('shown.bs.modal', function () {
+        if(!ace.vars['touch']) {
+          $(this).find('.chosen-container').each(function(){
+            $(this).find('a:first-child').css('width' , '210px');
+            $(this).find('.chosen-drop').css('width' , '210px');
+            $(this).find('.chosen-search input').css('width' , '200px');
+          });
+        }
+      })
+
     });
   </script>
-
-
 
 
 <!-- Fixed navbar -->  <!--
@@ -928,8 +840,8 @@
         <li><a href="mapa-equipes.html">Mapa das Equipes</a></li>--%>
       </ul>
     </div><!--/.nav-collapse -->
-  </div>
-</nav>
+
+
 
 <decorator:body />
 <!--footer-->
