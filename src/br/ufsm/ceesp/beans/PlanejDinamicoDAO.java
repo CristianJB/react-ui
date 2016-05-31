@@ -79,4 +79,11 @@ public class PlanejDinamicoDAO {
         return criteria.list();
     }
 
+    @Transactional
+    public Collection<Equipe> findEquipesByIdBase(Long idBase) {
+        Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Equipe.class);
+        criteria.add(Restrictions.eq("base.id", idBase));
+        return criteria.list();
+    }
+
 }
