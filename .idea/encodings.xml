@@ -5,11 +5,6 @@
     <file url="file://$PROJECT_DIR$/web/ace/ace-part2.min.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web/ace/ace-rtl.min.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web/ace/ace.min.css" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/web/ace/bootstrap-datetimepicker.min.css" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/web/ace/bootstrap-duallistbox.min.css" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/web/ace/bootstrap-editable.min.css" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/web/ace/bootstrap-multiselect.min.css" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/web/ace/bootstrap-timepicker.min.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web/ace/chosen.min.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web/ace/colorbox.min.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web/ace/colorpicker.css" charset="UTF-8" />
@@ -57,10 +52,6 @@
     <file url="file://$PROJECT_DIR$/web/js/ace/ace.min.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web/js/ace/additional-methods.min.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web/js/ace/bootbox.min.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/web/js/ace/bootstrap-datepicker.min.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/web/js/ace/bootstrap-datetimepicker.min.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/web/js/ace/bootstrap-markdown.min.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/web/js/ace/bootstrap-tag.min.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web/js/ace/chosen.jquery.min.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web/js/ace/dataTables.colVis.min.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web/js/ace/dataTables.tableTools.min.js" charset="UTF-8" />
@@ -73,7 +64,6 @@
     <file url="file://$PROJECT_DIR$/web/js/ace/fullcalendar.min.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web/js/ace/grid.locale-en.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web/js/ace/html5shiv.min.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/web/js/ace/jquery-ui.custom.min.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web/js/ace/markdown.min.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web/js/ace/moment.min.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web/js/ace/prettify.min.js" charset="UTF-8" />

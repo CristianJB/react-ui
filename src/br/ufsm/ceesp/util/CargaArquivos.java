@@ -68,7 +68,7 @@ public class CargaArquivos {
                 rota.setArquivoSaida(arq);
                 sessionFactory.getCurrentSession().save(rota);
             } else if (linhaArquivo.length > 5){
-                OrdemServicoRota ordemRota = new OrdemServicoRota();
+                DespachoOrdemServico ordemRota = new DespachoOrdemServico();
                 String seq = linhaArquivo[0].trim();
                 String tipoOrdem = linhaArquivo[1].trim();
                 String num = linhaArquivo[2].trim();

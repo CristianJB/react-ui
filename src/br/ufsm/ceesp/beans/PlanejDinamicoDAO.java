@@ -78,4 +78,5 @@ public class PlanejDinamicoDAO {
         arquivoSaida.add(Restrictions.eq("tipo", "Executada"));
         return criteria.list();
     }
+
 }

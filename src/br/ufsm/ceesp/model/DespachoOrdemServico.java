@@ -8,7 +8,7 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "ORDEM_SERVICO_ROTA")
-public class OrdemServicoRota {
+public class DespachoOrdemServico {
 
     private Long id;
     private Rota rota;

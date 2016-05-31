@@ -9,7 +9,8 @@
         <mapping class="br.ufsm.ceesp.model.OrdemServico" />
         <mapping class="br.ufsm.ceesp.model.ArquivoSaida" />
         <mapping class="br.ufsm.ceesp.model.Equipe" />
-        <mapping class="br.ufsm.ceesp.model.OrdemServicoRota" />
+        <mapping class="br.ufsm.ceesp.model.Base" />
+        <mapping class="br.ufsm.ceesp.model.DespachoOrdemServico" />
         <mapping class="br.ufsm.ceesp.model.Rota" />
     </session-factory>
 </hibernate-configuration>

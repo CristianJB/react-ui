@@ -13,7 +13,7 @@ public class Rota {
     private Long id;
     private ArquivoSaida arquivoSaida;
     private Equipe equipe;
-    private Collection<OrdemServicoRota> ordems;
+    private Collection<DespachoOrdemServico> ordems;
     private Long tempoAcumulado;
 
     @Column(name = "TEMPO_ACUMULADO")
@@ -48,11 +48,11 @@ public class Rota {
 
     @OneToMany(mappedBy = "rota")
     @OrderBy("sequencia")
-    public Collection<OrdemServicoRota> getOrdems() {
+    public Collection<DespachoOrdemServico> getOrdems() {
         return ordems;
     }
 
-    public void setOrdems(Collection<OrdemServicoRota> ordems) {
+    public void setOrdems(Collection<DespachoOrdemServico> ordems) {
         this.ordems = ordems;
     }
 

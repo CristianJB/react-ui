@@ -12,6 +12,7 @@ public class Equipe {
     private Long id;
     private Long numero;
     private Localizacao localizacao;
+    private Base base;
 
     @Id
     @GeneratedValue
@@ -42,4 +43,13 @@ public class Equipe {
         this.localizacao = localizacao;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "ID_BASE")
+    public Base getBase() {
+        return base;
+    }
+
+    public void setBase(Base base) {
+        this.base = base;
+    }
 }
