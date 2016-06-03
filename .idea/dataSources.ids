@@ -1905,13 +1905,22 @@
       <primary-key name="arquivo_saida_pkey" columns="id"/>
       <exported-key name="fk_15wtmai5204unj8681qnnsges" table="rotas" schema="public" catalog="planejdinamico" columns="id_arquivo_saida"/>
     </table>
+    <table name="bases" schema="public" catalog="planejdinamico" type="TABLE">
+      <column name="id" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="nome" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="bases_pkey" columns="id"/>
+      <exported-key name="fk_oanp5t89ymdgwkd60t2i95lfe" table="equipes" schema="public" catalog="planejdinamico" columns="id_base"/>
+      <index name="uk_8486mffj0u2oa3lytb0e2lqtt" unique="true" columns="nome"/>
+    </table>
     <table name="equipes" schema="public" catalog="planejdinamico" type="TABLE">
       <column name="id" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="latitude" sqlType="float8" precision="17" scale="17" nullable="true" jdbcType="8"/>
       <column name="longitude" sqlType="float8" precision="17" scale="17" nullable="true" jdbcType="8"/>
       <column name="numero" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5"/>
       <column name="tempo_acumulado" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="id_base" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5"/>
       <primary-key name="equipes_pkey" columns="id"/>
+      <foreign-key name="fk_oanp5t89ymdgwkd60t2i95lfe" columns="id_base" ref-table="bases" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <exported-key name="fk_rihy3wm52rxqswr6jiixhx3oh" table="rotas" schema="public" catalog="planejdinamico" columns="id_equipe"/>
       <index name="uk_k1xpe6jhc65ea4k666xomtt1f" unique="true" columns="numero"/>
     </table>

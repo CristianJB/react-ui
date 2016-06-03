@@ -1,5 +1,7 @@
 package br.ufsm.ceesp.model;
 
+import com.google.gson.annotations.Expose;
+
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
@@ -9,7 +11,9 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class Localizacao {
 
+    @Expose
     private Double latitude;
+    @Expose
     private Double longitude;
 
     @Column(name = "LATITUDE")

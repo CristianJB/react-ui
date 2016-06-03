@@ -1,5 +1,7 @@
 package br.ufsm.ceesp.model;
 
+import com.google.gson.annotations.Expose;
+
 import javax.persistence.*;
 
 /**
@@ -9,7 +11,9 @@ import javax.persistence.*;
 @Table(name = "BASES")
 public class Base {
 
+    @Expose
     private Long id;
+    @Expose
     private String nome;
 
     @Id

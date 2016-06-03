@@ -1,5 +1,7 @@
 package br.ufsm.ceesp.model;
 
+import com.google.gson.annotations.Expose;
+
 import javax.persistence.*;
 
 /**
@@ -9,9 +11,13 @@ import javax.persistence.*;
 @Table(name = "ORDENS_SERVICO")
 public class OrdemServico {
 
+    @Expose
     private Long id;
+    @Expose
     private String numero;
+    @Expose
     private String tipo;
+    @Expose
     private Localizacao localizacao;
 
     @Id

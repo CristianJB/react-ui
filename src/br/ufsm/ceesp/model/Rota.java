@@ -1,5 +1,7 @@
 package br.ufsm.ceesp.model;
 
+import com.google.gson.annotations.Expose;
+
 import javax.persistence.*;
 import java.util.Collection;
 
@@ -10,10 +12,15 @@ import java.util.Collection;
 @Table(name = "ROTAS")
 public class Rota {
 
+    @Expose
     private Long id;
+    @Expose
     private ArquivoSaida arquivoSaida;
+    @Expose
     private Equipe equipe;
+    @Expose
     private Collection<DespachoOrdemServico> ordems;
+    @Expose
     private Long tempoAcumulado;
 
     @Column(name = "TEMPO_ACUMULADO")

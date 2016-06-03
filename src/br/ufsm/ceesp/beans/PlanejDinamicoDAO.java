@@ -1,5 +1,6 @@
 package br.ufsm.ceesp.beans;
 
+import br.ufsm.ceesp.model.Base;
 import br.ufsm.ceesp.model.Equipe;
 import br.ufsm.ceesp.model.OrdemServico;
 import br.ufsm.ceesp.model.Rota;
@@ -37,13 +38,6 @@ public class PlanejDinamicoDAO {
     }
 
     @Transactional
-    public Equipe findByCodigo(Long numero) {
-        Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Equipe.class);
-        criteria.add(Restrictions.eq("numero", numero));
-        return (Equipe) criteria.uniqueResult();
-    }
-
-    @Transactional
     public Collection<Equipe> findEquipes() {
         Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Equipe.class);
         return criteria.list();
@@ -57,10 +51,16 @@ public class PlanejDinamicoDAO {
     }
 
     @Transactional
+    public Rota findRotaById(Long idRota) {
+        Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Rota.class);
+        criteria.add(Restrictions.eq("id", idRota));
+        return (Rota) criteria.uniqueResult();
+    }
+
+    @Transactional
     public Servico findServicoById(Long id) {
         return (Servico) sessionFactory.getCurrentSession().get(Servico.class, id);
     }
-
 
     @Transactional
     public Collection<Rota> findRotaByIdPlanejada(Long idEquipe) {
@@ -76,6 +76,12 @@ public class PlanejDinamicoDAO {
         criteria.add(Restrictions.eq("equipe.id", idEquipe));
         Criteria arquivoSaida = criteria.createCriteria("arquivoSaida");
         arquivoSaida.add(Restrictions.eq("tipo", "Executada"));
+        return criteria.list();
+    }
+
+    @Transactional
+    public Collection<Base> findBases() {
+        Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Base.class);
         return criteria.list();
     }
 

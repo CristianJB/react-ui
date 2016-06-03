@@ -830,8 +830,8 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="mapa-rotas.html">Mapa Rotas</a></li>
-        <li><a href="visualiza-rota.html?idRotaPlanejada=16841&idRotaExecutada=16813">Exibir Rotas</a></li>
-        <li><a href="carrega-mapa.html">Upload de Arquivos</a></li>
+        <li><a href="visualiza-rota.html<%--?idRotaPlanejada=16841&idRotaExecutada=16813--%>">Exibir Rotas</a></li>
+        <li><a href="carrega-mapa.html">Importar Arquivos</a></li>
         <li><a href="lista-servicos.html">Listar Serviços</a></li>
         <li><a href="mapa-servicos.html">Exibir Mapa</a></li>
         <%--<li><a href="carrega-mapa.html">Importar Arquivos</a></li>

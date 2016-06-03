@@ -1,5 +1,7 @@
 package br.ufsm.ceesp.model;
 
+import com.google.gson.annotations.Expose;
+
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Date;
@@ -17,6 +19,7 @@ public class ArquivoSaida {
     private Integer numOrdensEmergenciaisNaoAtribuidas;
     private String equacao;
     private Collection<Rota> rotas;
+    @Expose
     private String tipo;
 
     @Column(name = "TIPO")

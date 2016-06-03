@@ -1,5 +1,7 @@
 package br.ufsm.ceesp.model;
 
+import com.google.gson.annotations.Expose;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -10,16 +12,26 @@ import java.util.Date;
 @Table(name = "ORDEM_SERVICO_ROTA")
 public class DespachoOrdemServico {
 
+    @Expose
     private Long id;
     private Rota rota;
+    @Expose
     private Integer sequencia;
+    @Expose
     private Date dataHoraChegada;
+    @Expose
     private Date dataHoraSaida;
+    @Expose
     private Integer prioridade;
+    @Expose
     private Integer tempoAcumulado;
+    @Expose
     private OrdemServico ordemServico;
+    @Expose
     private Double custo;
+    @Expose
     private Double distanciaPosEquipe;
+    @Expose
     private Double distanciaPosAnterior;
 
     @Id
