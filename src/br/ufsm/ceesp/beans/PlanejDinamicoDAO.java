@@ -1,9 +1,6 @@
 package br.ufsm.ceesp.beans;
 
-import br.ufsm.ceesp.model.Base;
-import br.ufsm.ceesp.model.Equipe;
-import br.ufsm.ceesp.model.OrdemServico;
-import br.ufsm.ceesp.model.Rota;
+import br.ufsm.ceesp.model.*;
 import br.ufsm.ceesp.model.teste.Servico;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
@@ -44,9 +41,11 @@ public class PlanejDinamicoDAO {
     }
 
     @Transactional
-    public Collection<Rota> findRotasByEquipe(Long idEquipe) {
+    public Collection<Rota> findRotasByEquipe(Long idBase, Long idEquipe) {
         Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Rota.class);
         criteria.add(Restrictions.eq("equipe.id", idEquipe));
+        Criteria equipe = criteria.createCriteria("equipe");
+        equipe.add(Restrictions.eq("base.id", idBase));
         return criteria.list();
     }
 
@@ -55,6 +54,17 @@ public class PlanejDinamicoDAO {
         Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Rota.class);
         criteria.add(Restrictions.eq("id", idRota));
         return (Rota) criteria.uniqueResult();
+    }
+
+    @Transactional
+    public Collection<DespachoOrdemServico> findOrdens(Long idBase, Long idEquipe, Long idRota) {
+        Criteria criteria = sessionFactory.getCurrentSession().createCriteria(DespachoOrdemServico.class);
+        criteria.add(Restrictions.eq("rota.id", idRota));
+        Criteria rota = criteria.createCriteria("rota");
+        rota.add(Restrictions.eq("equipe.id", idEquipe));
+        Criteria equipe = rota.createCriteria("equipe");
+        equipe.add(Restrictions.eq("base.id", idBase));
+        return criteria.list();
     }
 
     @Transactional
@@ -86,9 +96,9 @@ public class PlanejDinamicoDAO {
     }
 
     @Transactional
-    public Collection<Equipe> findEquipesByIdBase(Long idBase) {
+    public Collection<Equipe> findEquipesByIdBase(Long id) {
         Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Equipe.class);
-        criteria.add(Restrictions.eq("base.id", idBase));
+        criteria.add(Restrictions.eq("base.id", id));
         return criteria.list();
     }
 

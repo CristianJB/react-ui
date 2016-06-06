@@ -24,7 +24,7 @@ public class EquipesController {
     @RequestMapping("mapa-equipes.html")
     public String visualiza(Long idEquipe, Model model) {
         model.addAttribute("equipes", plaDinDAO.findEquipes());
-        model.addAttribute("rotaEquipe", plaDinDAO.findRotasByEquipe(idEquipe));
+        model.addAttribute("rotaEquipe", plaDinDAO.findRotasByEquipe((long) 0,idEquipe));
         return "mapa-equipes";
     }
 }
