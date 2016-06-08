@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import java.lang.Long;
 
 /**
  * Created by 201420240 on 03/05/2016.
@@ -24,7 +25,7 @@ public class EquipesController {
     @RequestMapping("mapa-equipes.html")
     public String visualiza(Long idEquipe, Model model) {
         model.addAttribute("equipes", plaDinDAO.findEquipes());
-        model.addAttribute("rotaEquipe", plaDinDAO.findRotasByEquipe((long) 0,idEquipe));
+        model.addAttribute("rotaEquipe", plaDinDAO.findRotasByEquipe(idEquipe));
         return "mapa-equipes";
     }
 }
