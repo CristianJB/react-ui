@@ -41,11 +41,9 @@ public class PlanejDinamicoDAO {
     }
 
     @Transactional
-    public Collection<Rota> findRotasByEquipe(Long idBase, Long idEquipe) {
+    public Collection<Rota> findRotasByEquipe(Long idEquipe) {
         Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Rota.class);
         criteria.add(Restrictions.eq("equipe.id", idEquipe));
-        Criteria equipe = criteria.createCriteria("equipe");
-        equipe.add(Restrictions.eq("base.id", idBase));
         return criteria.list();
     }
 
@@ -57,13 +55,9 @@ public class PlanejDinamicoDAO {
     }
 
     @Transactional
-    public Collection<DespachoOrdemServico> findOrdens(Long idBase, Long idEquipe, Long idRota) {
+    public Collection<DespachoOrdemServico> findOrdens(Long idRota) {
         Criteria criteria = sessionFactory.getCurrentSession().createCriteria(DespachoOrdemServico.class);
         criteria.add(Restrictions.eq("rota.id", idRota));
-        Criteria rota = criteria.createCriteria("rota");
-        rota.add(Restrictions.eq("equipe.id", idEquipe));
-        Criteria equipe = rota.createCriteria("equipe");
-        equipe.add(Restrictions.eq("base.id", idBase));
         return criteria.list();
     }
 

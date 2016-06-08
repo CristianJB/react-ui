@@ -41,17 +41,17 @@ public class JsonController {
 
 
     @RequestMapping("rotas.json")
-    public String rotas(Long idBase, Long idEquipe, Model model) {
+    public String rotas(Long idEquipe, Model model) {
         Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
-        Collection<Rota> rotas = plaDinDAO.findRotasByEquipe(idBase, idEquipe);
+        Collection<Rota> rotas = plaDinDAO.findRotasByEquipe(idEquipe);
         model.addAttribute("json", gson.toJson(rotas));
         return "arquivoJSON";
     }
 
     @RequestMapping("ordens.json")
-    public String ordens(Long idBase, Long idEquipe, Long idRota, Model model) {
+    public String ordens(Long idRota, Model model) {
         Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
-        Collection<DespachoOrdemServico> ordens = plaDinDAO.findOrdens(idBase, idEquipe, idRota);
+        Collection<DespachoOrdemServico> ordens = plaDinDAO.findOrdens(idRota);
         model.addAttribute("json", gson.toJson(ordens));
         return "arquivoJSON";
     }
