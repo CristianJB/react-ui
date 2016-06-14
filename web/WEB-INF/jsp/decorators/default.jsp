@@ -597,23 +597,39 @@
 
         <!-- Fim seleção das equipes -->
       </li>
+            <script type="text/javascript">
+
+            $(document).ready(function()
+            {
+			    // var bases = {"0" : "Selecione a base", "1" : "Santa Maria","2" : "Canoas"};
+
+                $.ajax({
+                    url: "bases.json", dataType: 'json', async: false, success: function( data )
+                    {
+                        var $select = $('#select-base');
+
+                        $select.html('');
+                        var options = "";
+                        $.each(data, function(key, value){
+                            options += '<option value="' + key + '">' + value.nome + '</option>';
+                        });
+                        $select.html(options);
+                        //alert(options);
+                    }
+                });
+            });
+
+            </script>
 
       <!-- Bases-->
       <li class="hover pull-right" style="height:44px;">
         <div class="widget-main">
           <div style="width:200px;">
             <select class="chosen-select form-control" id="select-base" onchange="base()" data-placeholder="Escolha uma base...">
-              <option value="0">  </option>
-              <option value="1">Base Santa Maria</option>
+              <!-- <option value="0"> select </option> -->
+              <!-- <option value="1">Base Santa Maria</option>
               <option value="2">Base Canoas</option>
-              <option value="3">Base 3</option>
-              <option value="4">Base 4</option>
-              <option value="5">Base 5</option>
-              <option value="6">Base 6</option>
-              <option value="7">Base 7</option>
-              <option value="8">Base 8</option>
-              <option value="9">Base 9</option>
-              <option value="10">Base 10</option>
+			  -->
             </select>
 
               <script type="text/javascript">
@@ -630,7 +646,7 @@
                     initMap();
                     document.getElementById("PT1").style.display = "block";
                   }
-                  if(baseOptions==2){
+                    if(baseOptions==2){
                     centerMap = { "lat" : "-29.892960000" , "long" : "-51.128680000" };
                     initMap();
                     document.getElementById("PT2").style.display = "block";
