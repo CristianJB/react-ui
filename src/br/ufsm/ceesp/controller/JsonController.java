@@ -23,6 +23,11 @@ public class JsonController {
     @Autowired
     private PlanejDinamicoDAO plaDinDAO;
 
+    @RequestMapping("help.json")
+    public String help(Model model) {
+        return "help";
+    }
+
     @RequestMapping("bases.json")
     public String bases(Model model) {
         Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
