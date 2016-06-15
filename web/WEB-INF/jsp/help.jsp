@@ -10,7 +10,7 @@
 <head>
     <title>Help JSON</title>
 </head>
-<>
+
 <h2>Help JSON</h2>
 
 <h4><a href="bases.json">/bases.json</a> - retorna lista de bases disponíveis</h4>
