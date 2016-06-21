@@ -614,7 +614,7 @@
                             options += '<option value="' + key + '">' + value.nome + '</option>';
                         });
                         $select.html(options);
-                        //alert(options);
+                        alert(options);
                     }
                 });
             });
@@ -624,12 +624,8 @@
       <!-- Bases-->
       <li class="hover pull-right" style="height:44px;">
         <div class="widget-main">
-          <div style="width:200px;">
+          <div style="width:150px;">
             <select class="chosen-select form-control" id="select-base" onchange="base()" data-placeholder="Escolha uma base...">
-              <!-- <option value="0"> select </option> -->
-              <!-- <option value="1">Base Santa Maria</option>
-              <option value="2">Base Canoas</option>
-			  -->
             </select>
 
               <script type="text/javascript">
@@ -641,17 +637,20 @@
                   document.getElementById("PT2").style.display = "none";
                   document.getElementById("PT3").style.display = "none";
 
-                  if(baseOptions==1){
+                  if(baseOptions==1) // Santa Maria
+                  {
                     centerMap = { "lat" : "-29.695060000" , "long" : "-53.725150000" };
                     initMap();
                     document.getElementById("PT1").style.display = "block";
                   }
-                    if(baseOptions==2){
+                  if(baseOptions==0) // Canoas
+                  {
                     centerMap = { "lat" : "-29.892960000" , "long" : "-51.128680000" };
                     initMap();
                     document.getElementById("PT2").style.display = "block";
                   }
-                  if(baseOptions==3){
+                  if(baseOptions>=2)
+                  {
                     document.getElementById("PT3").style.display = "block";
                   }
                 }
