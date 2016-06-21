@@ -614,19 +614,38 @@
                             options += '<option value="' + key + '">' + value.nome + '</option>';
                         });
                         $select.html(options);
-                        alert(options);
+                        //alert(options);
                     }
                 });
             });
 
             </script>
 
+      <!-- calendario para selecao de data -->
+      <li class="hover pull-right" style="height:44px;">
+        <div class="widget-main">
+          <div style="width:300px;">
+              <form class="form-inline" role="form" action="carrega-mapa.html" method="get">
+                <div class="form-group">
+                  <label><b>Data: </b></label>
+                  <input type="date" name="data" class="form-control" id="data" />
+                  <button type="submit" class="btn btn-primary">Filtrar</button>
+                </div>
+              </form>
+          </div>
+        </div>
+      </li>
+
       <!-- Bases-->
       <li class="hover pull-right" style="height:44px;">
         <div class="widget-main">
-          <div style="width:150px;">
+          <div style="width:120px;">
+            <div class="form-group">
+            <!-- <label><b>Base: </b></label> -->
             <select class="chosen-select form-control" id="select-base" onchange="base()" data-placeholder="Escolha uma base...">
+
             </select>
+            </div>
 
               <script type="text/javascript">
 
@@ -658,7 +677,7 @@
 
           </div>
         </div>
-      </li>
+  </li>
     </ul><!-- /.nav-list -->
 
     <script type="text/javascript">
@@ -674,6 +693,7 @@
     <div id="columnrange" style="position:absolute;bottom:4%; left:50%;height:350px;z-index:1"></div>
   </div>
 </div>
+
   <!-- page specific plugin scripts -->
 
 
