@@ -24,8 +24,8 @@
   <title><decorator:title default="Serviços" /></title>
 
   <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="all"/>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
+  <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+-->
   <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
   <link rel="stylesheet" href="fonts/fonts.googleapis.com.css" />
   <link rel="stylesheet" href="ace/ace-part2.min.css" class="ace-main-stylesheet" />
@@ -33,8 +33,49 @@
   <link rel="stylesheet" href="ace/ace.min.css" />
   <%--<script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>--%>
 
+  <!-- jquery UI -->
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+  <!-- <script src="http://code.jquery.com/jquery-1.10.2.js"></script> -->
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
 
-  <!-- page specific plugin styles -->
+  <!-- calendario -->
+  <script type="text/javascript">
+    (function($) {
+      $(function() {
+        $( "#datepicker" ).datepicker();
+      });
+    })(jQuery);
+  </script>
+
+  <script type="text/javascript">
+    (function($) {
+        $(function()
+        {
+            // var bases = {"0" : "Selecione a base", "1" : "Santa Maria","2" : "Canoas"};
+
+            $.ajax({
+                url: "bases.json", dataType: 'json', async: false, success: function( data )
+                {
+                    var $select = $('#select-base');
+
+                    $select.html('');
+                    var options = "";
+                    options+=  '<option selected disabled> Selecione base </option>';
+                    $.each(data, function(key, value){
+                        options += '<option value="' + key + '">' + value.nome + '</option>';
+                    });
+                    $select.html(options);
+                    //alert(options);
+                }
+            });
+        });
+    })(jQuery);
+    </script>
+
+
+    <!-- page specific plugin styles -->
   <link rel="stylesheet" href="ace/jquery-ui.custom.min.css" />
   <link rel="stylesheet" href="ace/chosen.min.css" />
   <decorator:head />
@@ -225,85 +266,85 @@
                         <li>
                           <a href="#">
                             <img src="avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
-																<span class="msg-body">
-																	<span class="msg-title">
-																		<span class="blue">Magdiel:</span>
-																		Ciao sociis natoque penatibus et auctor ...
-																	</span>
+                                <span class="msg-body">
+                                    <span class="msg-title">
+                                        <span class="blue">Magdiel:</span>
+                                        Ciao sociis natoque penatibus et auctor ...
+                                    </span>
 
-																	<span class="msg-time">
-																		<i class="ace-icon fa fa-clock-o"></i>
-																		<span>a moment ago</span>
-																	</span>
-																</span>
+                                    <span class="msg-time">
+                                        <i class="ace-icon fa fa-clock-o"></i>
+                                        <span>a moment ago</span>
+                                    </span>
+                                </span>
                           </a>
                         </li>
 
                         <li>
                           <a href="#">
                             <img src="avatars/avatar3.png" class="msg-photo" alt="Susan's Avatar" />
-																<span class="msg-body">
-																	<span class="msg-title">
-																		<span class="blue">Susan:</span>
-																		Vestibulum id ligula porta felis euismod ...
-																	</span>
+                                <span class="msg-body">
+                                    <span class="msg-title">
+                                        <span class="blue">Susan:</span>
+                                        Vestibulum id ligula porta felis euismod ...
+                                    </span>
 
-																	<span class="msg-time">
-																		<i class="ace-icon fa fa-clock-o"></i>
-																		<span>20 minutes ago</span>
-																	</span>
-																</span>
+                                    <span class="msg-time">
+                                        <i class="ace-icon fa fa-clock-o"></i>
+                                        <span>20 minutes ago</span>
+                                    </span>
+                                </span>
                           </a>
                         </li>
 
                         <li>
                           <a href="#">
                             <img src="avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
-																<span class="msg-body">
-																	<span class="msg-title">
-																		<span class="blue">Vinícius:</span>
-																		Nullam quis risus eget urna mollis ornare ...
-																	</span>
+                                <span class="msg-body">
+                                    <span class="msg-title">
+                                        <span class="blue">Vinícius:</span>
+                                        Nullam quis risus eget urna mollis ornare ...
+                                    </span>
 
-																	<span class="msg-time">
-																		<i class="ace-icon fa fa-clock-o"></i>
-																		<span>3:15 pm</span>
-																	</span>
-																</span>
+                                    <span class="msg-time">
+                                        <i class="ace-icon fa fa-clock-o"></i>
+                                        <span>3:15 pm</span>
+                                    </span>
+                                </span>
                           </a>
                         </li>
 
                         <li>
                           <a href="#">
                             <img src="avatars/avatar2.png" class="msg-photo" alt="Kate's Avatar" />
-																<span class="msg-body">
-																	<span class="msg-title">
-																		<span class="blue">Kate:</span>
-																		Ciao sociis natoque eget urna mollis ornare ...
-																	</span>
+                                <span class="msg-body">
+                                    <span class="msg-title">
+                                        <span class="blue">Kate:</span>
+                                        Ciao sociis natoque eget urna mollis ornare ...
+                                    </span>
 
-																	<span class="msg-time">
-																		<i class="ace-icon fa fa-clock-o"></i>
-																		<span>1:33 pm</span>
-																	</span>
-																</span>
+                                    <span class="msg-time">
+                                        <i class="ace-icon fa fa-clock-o"></i>
+                                        <span>1:33 pm</span>
+                                    </span>
+                                </span>
                           </a>
                         </li>
 
                         <li>
                           <a href="#">
                             <img src="avatars/avatar5.png" class="msg-photo" alt="Fred's Avatar" />
-																<span class="msg-body">
-																	<span class="msg-title">
-																		<span class="blue">Fred:</span>
-																		Vestibulum id penatibus et auctor  ...
-																	</span>
+                                <span class="msg-body">
+                                    <span class="msg-title">
+                                        <span class="blue">Fred:</span>
+                                        Vestibulum id penatibus et auctor  ...
+                                    </span>
 
-																	<span class="msg-time">
-																		<i class="ace-icon fa fa-clock-o"></i>
-																		<span>10:09 am</span>
-																	</span>
-																</span>
+                                    <span class="msg-time">
+                                        <i class="ace-icon fa fa-clock-o"></i>
+                                        <span>10:09 am</span>
+                                    </span>
+                                </span>
                           </a>
                         </li>
                       </ul>
@@ -328,10 +369,10 @@
             <!--<a  style="padding: 0px;"><img src="aes_sul.png" alt="AES Sul - Planejamento Dinâmico" style="height:100%"></a>
 -->
             <i class="ace-icon fa fa-user"></i>
-								<span class="user-info">
-									<small>Welcome,</small>
-									Usuário
-								</span>
+                <span class="user-info">
+                    <small>Welcome,</small>
+                    Usuário
+                </span>
 
             <i class="ace-icon fa fa-caret-down"></i>
           </a>
@@ -597,42 +638,23 @@
 
         <!-- Fim seleção das equipes -->
       </li>
-            <script type="text/javascript">
-
-            $(document).ready(function()
-            {
-			    // var bases = {"0" : "Selecione a base", "1" : "Santa Maria","2" : "Canoas"};
-
-                $.ajax({
-                    url: "bases.json", dataType: 'json', async: false, success: function( data )
-                    {
-                        var $select = $('#select-base');
-
-                        $select.html('');
-                        var options = "";
-                        $.each(data, function(key, value){
-                            options += '<option value="' + key + '">' + value.nome + '</option>';
-                        });
-                        $select.html(options);
-                        //alert(options);
-                    }
-                });
-            });
-
-            </script>
 
       <!-- calendario para selecao de data -->
+
       <li class="hover pull-right" style="height:44px;">
         <div class="widget-main">
-          <div style="width:300px;">
-              <form class="form-inline" role="form" action="carrega-mapa.html" method="get">
-                <div class="form-group">
-                  <label><b>Data: </b></label>
-                  <input type="date" name="data" class="form-control" id="data" />
-                  <button type="submit" class="btn btn-primary">Filtrar</button>
-                </div>
-              </form>
+          <div style="width:220px;">
+            <b>Data:</b> <input type="text" style="height: 30px" id="datepicker" onchange="getdata()">
           </div>
+          <script type="text/javascript">
+            function getdata()
+            {
+              (function($) {
+                 data = $( "#datepicker" ).datepicker("getDate");
+                 alert(data);
+              })(jQuery);
+            }
+          </script>
         </div>
       </li>
 
@@ -640,12 +662,9 @@
       <li class="hover pull-right" style="height:44px;">
         <div class="widget-main">
           <div style="width:120px;">
-            <div class="form-group">
-            <!-- <label><b>Base: </b></label> -->
-            <select class="chosen-select form-control" id="select-base" onchange="base()" data-placeholder="Escolha uma base...">
-
+            <select class="chosen-select form-control" title="Base" id="select-base" onchange="base()" data-placeholder="Escolha uma base...">
+              <option selected disabled>Selecione base </option>
             </select>
-            </div>
 
               <script type="text/javascript">
 
@@ -696,12 +715,12 @@
 
   <!-- page specific plugin scripts -->
 
-
+<!--
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
   <script type="text/javascript" src='js/jquery1x.min.js'></script>
   <script type="text/javascript" src='js/jquery.mobile.custom.min.js'></script>
-
+  -->
   <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 
   <script type="text/javascript" src="js/highcharts/highcharts.js"></script>
@@ -723,7 +742,7 @@
   <script type="text/javascript" src="js/jquery.autosize.min.js"></script>
 
   <script type="text/javascript">
-  jQuery(function($) {
+    (function($) {
       var $sidebar = $('.sidebar').eq(0);
       if( !$sidebar.hasClass('h-sidebar') ) return;
 
@@ -801,7 +820,8 @@
       }
 
       $('textarea[class*=autosize]').autosize({append: "\n"});
-      $('textarea.limited').inputlimiter({
+
+      /* $('textarea.limited').inputlimiter({
         remText: '%n character%s remaining...',
         limitText: 'max allowed : %n.'
       });
@@ -811,7 +831,7 @@
       $('.input-mask-phone').mask('(999) 999-9999');
       $('.input-mask-eyescript').mask('~9.99 ~9.99 999');
       $(".input-mask-product").mask("a*-999-a999",{placeholder:" ",completed:function(){alert("You typed the following: "+this.val());}});
-
+       */
 
       var tag_input = $('#form-field-tags');
       try{
@@ -846,7 +866,7 @@
         }
       })
 
-    });
+    })(jQuery);
   </script>
 
 
