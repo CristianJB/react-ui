@@ -31,7 +31,7 @@ const muiTheme = getMuiTheme({
     },
 });
 
-export default class Main extends Component {
+export default class App extends Component {
     constructor(props,context) {
         super(props,context);
         this.state = {
@@ -59,26 +59,20 @@ export default class Main extends Component {
 
                     <Tab label="CURTO PRAZO" value={0}>
                         <div>
-                            <h2 style={styles.headline}>Tab One</h2>
+                            <h2 style={styles.headline}>Mapa</h2>
                             <p>
-                                This is an example tab.
+                                aqui vai o mapa !!!
                             </p>
                         </div>
                     </Tab>
                     <Tab label="MÉDIO PRAZO" value={1}>
                         <div>
-                            <h2 style={styles.headline}>Tab Two</h2>
-                            <p>
-                                This is an example tab.
-                            </p>
+                            <h2 style={styles.headline}>Aqui vai a interface para médio prazo</h2>
                         </div>
                     </Tab>
                     <Tab label="LONGO PRAZO" value={2}>
                         <div>
-                            <h2 style={styles.headline}>Tab Three</h2>
-                            <p>
-                                This is an example tab.
-                            </p>
+                            <h2 style={styles.headline}>Aqui vai a interface para longo prazo</h2>
                         </div>
                     </Tab>
                 </Tabs>

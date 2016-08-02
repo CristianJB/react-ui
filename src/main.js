@@ -11,13 +11,13 @@ import ReactDOM from 'react-dom';
 import { Router, browserHistory } from 'react-router';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import Main from './app/Main'; // Our custom react component
+import App from './common/containers/App';
 
 // Routes
 //import Routes from './common/components/Routes';
 
 // Base styling
-import './common/base.css';
+import './common/themes/base.css';
 
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
@@ -28,6 +28,6 @@ const DOM_APP_EL_ID = 'app';
 
 // Render the router
 ReactDOM.render((
-    <Main />
+    <App />
 ), document.getElementById(DOM_APP_EL_ID));
 
