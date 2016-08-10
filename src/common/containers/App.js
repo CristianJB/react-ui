@@ -1,20 +1,13 @@
-/**
- * In this file, we create a React component
- * which incorporates components providedby material-ui.
- */
 import React, {Component} from 'react';
 import {Tabs, Tab} from 'material-ui/Tabs';
-// From https://github.com/oliviertassinari/react-swipeable-views
-//import SwipeableViews from 'react-swipeable-views';
-
-import {deepOrange500} from 'material-ui/styles/colors';
-//import FlatButton from 'material-ui/FlatButton';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import MenuDropDown from '../components/MenuDropDown';
+import SeletorData from '../components/SeletorData'
+import {Grid, Row, Col} from 'react-flexbox-grid/lib';
+import MainMap from '../components/MainMap';
 
 const styles = {
     container: {
-        //textAlign: 'top',
+        textAlign: 'center',
         paddingTop: 200,
     },
     headline: {
@@ -23,61 +16,68 @@ const styles = {
         marginBottom: 12,
         fontWeight: 400,
     },
-};
-
-const muiTheme = getMuiTheme({
-    palette: {
-        accent1Color: deepOrange500,
+    tabs:{
+        height: 2,
     },
-});
+};
 
 export default class App extends Component {
     constructor(props,context) {
         super(props,context);
         this.state = {
-            slideIndex: 0,
+            slideIndex: "0",
         };
     }
 
-// /*
-//     handleChange = (value) => {
-//         this.setState({
-//             slideIndex: value,
-//         });
-//     };
-// */
+    handleChange = (value) => {
+        this.setState({
+            slideIndex: value,
+        });
+    };
 
-//onChange={this.handleChange}
     render() {
-
         return(
-        <MuiThemeProvider muiTheme={muiTheme}>
-                {/*<div style={styles.container}>*/}
-                <Tabs
-                    value={this.state.slideIndex}
-                >
-
-                    <Tab label="CURTO PRAZO" value={0}>
-                        <div>
-                            <h2 style={styles.headline}>Mapa</h2>
-                            <p>
-                                aqui vai o mapa !!!
-                            </p>
-                        </div>
-                    </Tab>
-                    <Tab label="MÉDIO PRAZO" value={1}>
-                        <div>
-                            <h2 style={styles.headline}>Aqui vai a interface para médio prazo</h2>
-                        </div>
-                    </Tab>
-                    <Tab label="LONGO PRAZO" value={2}>
-                        <div>
-                            <h2 style={styles.headline}>Aqui vai a interface para longo prazo</h2>
-                        </div>
-                    </Tab>
-                </Tabs>
-                {/*</div>*/}
-        </MuiThemeProvider>
+            <Tabs
+                style={styles.tabs}
+                value={this.state.slideIndex}
+                onChange={this.handleChange}
+            >
+            <Tab label="CURTO PRAZO" value="0">
+                <div>
+                    <Grid fluid>
+                        <Row>
+                            <Col>
+                                {/*Menu de bases*/}
+                                <MenuDropDown items={this.props.menuBasesItems} />
+                            </Col>
+                            <Col>
+                                {/*Menu de Equipes*/}
+                                <MenuDropDown items={this.props.menuEquipesItems} />
+                            </Col>
+                            <Col xs={6} md={3}>
+                                <SeletorData/>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <MainMap/>
+                        </Row>
+                    </Grid>
+                </div>
+            </Tab>
+            <Tab label="MÉDIO PRAZO" value="1">
+                <div>
+                    <h2 style={styles.headline}>Aqui vai a interface para médio prazo</h2>
+                    <p>
+                        Aqui vai a interface para médio prazo !!!
+                    </p>
+                </div>
+            </Tab>
+            <Tab label="LONGO PRAZO" value="2">
+                <div>
+                    <h2 style={styles.headline}>Aqui vai a interface para longo prazo</h2>
+                </div>
+            </Tab>
+        </Tabs>
         );
     }
 }
