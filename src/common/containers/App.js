@@ -4,6 +4,7 @@ import MenuDropDown from '../components/MenuDropDown';
 import SeletorData from '../components/SeletorData'
 import {Grid, Row, Col} from 'react-flexbox-grid/lib';
 import MainMap from '../components/MainMap';
+import MenuBases from './MenuBases'
 
 const styles = {
     container: {
@@ -36,6 +37,7 @@ export default class App extends Component {
     };
 
     render() {
+        const { bases } = this.props
         return(
             <Tabs
                 style={styles.tabs}
@@ -48,7 +50,8 @@ export default class App extends Component {
                         <Row>
                             <Col>
                                 {/*Menu de bases*/}
-                                <MenuDropDown items={this.props.menuBasesItems} />
+                                {/*<MenuDropDown items={this.props.menuBasesItems} />*/}
+                                <MenuBases/>
                             </Col>
                             <Col>
                                 {/*Menu de Equipes*/}

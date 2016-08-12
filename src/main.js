@@ -4,53 +4,27 @@
 
 // Polyfill
 import 'babel-polyfill';
-
-// Libraries
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, browserHistory } from 'react-router';
+import { browserHistory } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux'
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
-
-// Needed for onTouchTap
-// http://stackoverflow.com/a/34015469/988941
 injectTapEventPlugin();
 
-import App from './common/containers/App';
 
-// Routes
-//import Routes from './common/components/Routes';
-
-import {deepOrange500} from 'material-ui/styles/colors';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Root from './common/containers/Root'
+import configureStore from './common/store/configureStore'
+import { getAllBases } from './common/actions'
 
 
-// Base styling
-import './common/themes/base.css';
+const store = configureStore();
+const history = syncHistoryWithStore(browserHistory, store);
 
+/* inicia a store com as bases*/
+store.dispatch(getAllBases());
 
-// ID of the DOM element to mount app on
-const DOM_APP_EL_ID = 'app';
-
-const muiTheme = getMuiTheme({
-    palette: {
-        accent1Color: deepOrange500,
-    },
-});
-
-
-const MainApp = () => (
-    <MuiThemeProvider muiTheme={muiTheme}>
-        <App
-            menuBasesItems={['Selecione a base','Santa Maria', 'Canoas']}
-            menuEquipesItems={['Selecione a equipe','913', '931']}
-        />
-    </MuiThemeProvider>
+ReactDOM.render(
+    <Root store={store} history={history} />,
+    document.getElementById('app')
 );
-
-// Render the router
-ReactDOM.render((
-    <MainApp />
-), document.getElementById(DOM_APP_EL_ID));
-

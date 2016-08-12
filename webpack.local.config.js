@@ -42,8 +42,14 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.jsx?$/, exclude: /node_modules/, loaders: ["react-hot", "babel-loader"] },
-      { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader') }
-    ]
+      { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader') },
+      {
+        test: /\.json$/,
+        loaders: [ 'json' ],
+        exclude: /node_modules/,
+        include: __dirname
+      }
+      ]
   },
 
   // Automatically transform files with these extensions
