@@ -2,10 +2,12 @@
 import { routerReducer as routing } from 'react-router-redux'
 import { combineReducers } from 'redux'
 import bases, * as fromBases from './bases'
+import ordens, * as fromOrdens from './ordens'
 
 const rootReducer = combineReducers({
     routing,
-    bases
+    bases,
+    ordens
 })
 
 function getBase(state, id) {

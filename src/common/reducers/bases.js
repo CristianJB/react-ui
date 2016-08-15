@@ -1,6 +1,23 @@
 import { combineReducers } from 'redux'
-import { RECEIVE_BASES, ADD_TO_MAP } from '../constants/ActionTypes'
+import { RECEIVE_BASES, SELECT_BASE, SELECT_EQUIPE } from '../constants/ActionTypes'
 
+const initialState = {
+  id: 0,
+  id_equipe: 0
+}
+
+function selectId(state = initialState, action) {
+  switch (action.type) {
+    case RECEIVE_BASES:
+      return state
+    case SELECT_BASE:
+      return Object.assign({}, state, action.id);
+    case SELECT_EQUIPE:
+      return Object.assign({}, state, action.id_equipe);
+    default:
+      return state
+  }
+}
 
 function byId(state = {}, action) {
   switch (action.type) {
@@ -13,12 +30,6 @@ function byId(state = {}, action) {
         }, {})
       )
     default:
-      const { baseId } = action
-      if (baseId) {
-        return Object.assign({}, state, {
-          [baseId]: bases(state[baseId], action)
-        })
-      }
       return state
   }
 }
@@ -26,7 +37,7 @@ function byId(state = {}, action) {
 function visibleIds(state = [], action) {
   switch (action.type) {
     case RECEIVE_BASES:
-      return action.bases.map(base=> base.id)
+      return action.bases.map(base => base.id)
     default:
       return state
   }
@@ -34,7 +45,8 @@ function visibleIds(state = [], action) {
 
 export default combineReducers({
   byId,
-  visibleIds
+  visibleIds,
+  selectId
 })
 
 export function getBase(state, id) {
@@ -43,4 +55,18 @@ export function getBase(state, id) {
 
 export function getVisibleBases(state) {
   return state.visibleIds.map(id => getBase(state, id))
+}
+
+export function getSelectedBase(state) {
+  return state.selectId.id;
+}
+
+export function getEquipes(state, id) {
+  var obj = getBase(state,id);
+  return obj.equipes;
+
+}
+
+export function getSelectedEquipe(state) {
+  return state.selectId.id_equipe;
 }

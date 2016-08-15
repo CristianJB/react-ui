@@ -5,6 +5,7 @@ import SeletorData from '../components/SeletorData'
 import {Grid, Row, Col} from 'react-flexbox-grid/lib';
 import MainMap from '../components/MainMap';
 import MenuBases from './MenuBases'
+import MenuEquipes from "./MenuEquipes"
 
 const styles = {
     container: {
@@ -55,7 +56,8 @@ export default class App extends Component {
                             </Col>
                             <Col>
                                 {/*Menu de Equipes*/}
-                                <MenuDropDown items={this.props.menuEquipesItems} />
+                                {/*<MenuDropDown items={this.props.menuEquipesItems} />*/}
+                                <MenuEquipes/>
                             </Col>
                             <Col xs={6} md={3}>
                                 <SeletorData/>

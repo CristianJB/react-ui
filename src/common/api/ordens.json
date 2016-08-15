@@ -1,0 +1,533 @@
+[
+		{
+		"id": 1,
+		"numero": 1 ,
+		"tipo": "Emergencial",
+		"tmp_acum_rota": 28 ,
+		"custo": 27.62 ,
+		"datahora_chegada": " 06-02-2013T12:42:00Z" ,
+		"datahora_saida": " 06-02-2013T13:12:00Z" ,
+		"equipe": 233,
+		"lat" : "-29.954305234" , 
+		"long" : "-51.161028911",
+		"estado": "Plan" 
+		}
+		,
+		{
+		"id": 2,
+		"numero": 2 ,
+		"tipo": "Emergencial",
+		"tmp_acum_rota": 76 ,
+		"custo": 25.47 ,
+		"datahora_chegada": " 06-02-2013T13:30:00Z" ,
+		"datahora_saida": " 06-02-2013T14:00:00Z" ,
+		"equipe": 233,
+		"lat" : "-29.881582756" , 
+		"long" : "-51.256003245", 
+		"estado": "Plan" 
+		}
+		,
+		{
+		"id": 3,
+		"numero": 3 ,
+		"tipo": "Emergencial",
+		"tmp_acum_rota": 106 ,
+		"custo": 25.47 ,
+		"datahora_chegada": " 06-02-2013T14:00:00Z" ,
+		"datahora_saida": " 06-02-2013T14:30:00Z" ,
+		"equipe": 233,
+		"lat" : "-29.881582766" , 
+		"long" : "-51.256003265", 
+		"estado": "Plan" 
+		}
+		,
+		{
+		"id": 4,
+		"numero": 4 ,
+		"tipo": "Comercial",
+		"tmp_acum_rota": 154 ,
+		"custo": 25.47 ,
+		"datahora_chegada": " 06-02-2013T14:49:00Z" ,
+		"datahora_saida": " 06-02-2013T15:44:00Z" ,
+		"equipe": 233,
+		"lat" : "-29.892960000" , 
+		"long" : "-51.128680000", 
+		"estado": "Plan"
+		}
+		,
+		{
+		"id": 5,
+		"numero": 5 ,
+		"tipo": "Comercial",
+		"tmp_acum_rota": 211 ,
+		"custo": 0 ,
+		"datahora_chegada": " 06-02-2013T15:46:00Z" ,
+		"datahora_saida": " 06-02-2013T16:41:00Z" ,
+		"equipe": 233,
+		"lat" : "-29.885223690" , 
+		"long" : "-51.132156720", 
+		"estado": "Plan"
+		}
+		,
+		{
+		"id": 6,
+		"numero": 6 ,
+		"tipo": "Comercial",
+		"tmp_acum_rota": 266 ,
+		"custo": 0 ,
+		"datahora_chegada": " 06-02-2013T16:41:00Z" ,
+		"datahora_saida": " 06-02-2013T17:36:00Z" ,
+		"equipe": 233,
+		"lat" : "-29.884405300" , 
+		"long" : "-51.134684100", 
+		"estado": "Plan"
+		}
+		,
+		{
+		"id": 7,
+		"numero": 7 ,
+		"tipo": "Comercial",
+		"tmp_acum_rota": 321 ,
+		"custo": 0 ,
+		"datahora_chegada": " 06-02-2013T17:36:00Z" ,
+		"datahora_saida": " 06-02-2013T18:31:00Z" ,
+		"equipe": 233,
+		"lat" : "-29.884210000" ,
+		"long" : "-51.134710000",
+		"estado": "Plan"
+		}
+		,
+		{
+		"id": 8,
+		"numero": 8 ,
+		"tipo": "Comercial",
+		"tmp_acum_rota": 376 ,
+		"custo": 0 ,
+		"datahora_chegada": " 06-02-2013T18:31:00Z" ,
+		"datahora_saida": " 06-02-2013T19:26:00Z" ,
+		"equipe": 233,
+		"lat" : "-29.885141460" , 
+		"long" : "-51.136051350", 
+		"estado": "Plan"
+		}
+		,
+		{
+		"id": 9,
+		"numero": 1 ,
+		"tipo": "Comercial",
+		"tmp_acum_rota": 17 ,
+		"custo": 0 ,
+		"datahora_chegada": " 06-02-2013T12:32:00Z" ,
+		"datahora_saida": " 06-02-2013T13:27:00Z" ,
+		"equipe": 233,
+		"lat" : "-29.892960000" , 
+		"long" : "-51.128680000",
+		"estado": "Exec"
+		}
+		,
+		{
+		"id": 10,
+		"numero": 2 ,
+		"tipo": "Comercial",
+		"tmp_acum_rota": 74 ,
+		"custo": 0 ,
+		"datahora_chegada": " 06-02-2013T13:29:00Z" ,
+		"datahora_saida": " 06-02-2013T14:24:00Z" ,
+		"equipe": 233,
+		"lat" : "-29.885223690" , 
+		"long" : "-51.132156720",
+		"estado": "Exec"
+		}
+		,
+		{
+		"id": 11,
+		"numero": 3 ,
+		"tipo": "Comercial",
+		"tmp_acum_rota": 129 ,
+		"custo": 0 ,
+		"datahora_chegada": " 06-02-2013T14:24:00Z" ,
+		"datahora_saida": " 06-02-2013T15:19:00Z" ,
+		"equipe": 233,
+		"lat" : "-29.884405300" , 
+		"long" : "-51.134684100",
+		"estado": "Exec"
+		}
+		,
+		{
+		"id": 12,
+		"numero": 4 ,
+		"tipo": "Comercial",
+		"tmp_acum_rota": 184 ,
+		"custo": 0 ,
+		"datahora_chegada": " 06-02-2013T15:19:00Z" ,
+		"datahora_saida": " 06-02-2013T16:14:00Z" ,
+		"equipe": 233,
+		"lat" : "-29.884210000" , 
+		"long" : "-51.134710000",
+		"estado": "Exec"
+		}
+		,
+		{
+		"id": 13,
+		"numero": 5 ,
+		"tipo": "Comercial",
+		"tmp_acum_rota": 239 ,
+		"custo": 0 ,
+		"datahora_chegada": " 06-02-2013T16:14:00Z" ,
+		"datahora_saida": " 06-02-2013T17:09:00Z" ,
+		"equipe": 233,
+		"lat" : "-29.885141460" , 
+		"long" : "-51.136051350",
+		"estado": "Exec"
+		}
+		,
+		{
+		"id": 14,
+		"numero": 1 ,
+		"tipo": "Comercial",
+		"tmp_acum_rota": 53 ,
+		"custo": 100 ,
+		"datahora_chegada": " 06-02-2013T13:08:00Z" ,
+		"datahora_saida": " 06-02-2013T14:03:00Z" ,
+		"equipe": 244,
+		"lat" : "-29.956190000" , 
+		"long" : "-51.182390000",
+		"estado": "Plan"
+		}
+		,
+		{
+		"id": 15,
+		"numero": 2 ,
+		"tipo": "Comercial",
+		"tmp_acum_rota": 109 ,
+		"custo": 100 ,
+		"datahora_chegada": " 06-02-2013T14:04:00Z" ,
+		"datahora_saida": " 06-02-2013T14:59:00Z" ,
+		"equipe": 244,
+		"lat" : "-29.960490000" , 
+		"long" : "-51.181620000",
+		"estado": "Plan"
+		}
+		,
+		{
+		"id": 16,
+		"numero": 3 ,
+		"tipo": "Comercial",
+		"tmp_acum_rota": 165 ,
+		"custo": 0 ,
+		"datahora_chegada": " 06-02-2013T15:00:00Z" ,
+		"datahora_saida": " 06-02-2013T15:30:00Z" ,
+		"equipe": 244,
+		"lat" : "-29.963600000" , 
+		"long" : "-51.184270000",
+		"estado": "Plan"
+		}
+		,
+		{
+		"id": 17,
+		"numero": 4 ,
+		"tipo": "Comercial",
+		"tmp_acum_rota": 195 ,
+		"custo": 0 ,
+		"datahora_chegada": " 06-02-2013T15:30:00Z" ,
+		"datahora_saida": " 06-02-2013T16:00:00Z" ,
+		"equipe": 244,
+		"lat" : "-29.965750000" , 
+		"long" : "-51.186190000",
+		"estado": "Plan"
+		}
+		,
+		{
+		"id": 18,
+		"numero": 1 ,
+		"tipo": "Emergencial",
+		"tmp_acum_rota": 52 ,
+		"custo": 51.75 ,
+		"datahora_chegada": " 06-02-2013T13:06:00Z" ,
+		"datahora_saida": " 06-02-2013T13:36:00Z" ,
+		"equipe": 244,
+		"lat" : "-29.954305234" , 
+		"long" : "-51.161028911", 
+		"estado": "Exec"
+		}
+		,
+		{
+		"id": 119,
+		"numero": 2 ,
+		"tipo": "Comercial",
+		"tmp_acum_rota": 84 ,
+		"custo": 0 ,
+		"datahora_chegada": " 06-02-2013T13:39:00Z" ,
+		"datahora_saida": " 06-02-2013T14:34:00Z" ,
+		"equipe": 244,
+		"lat" : "-29.956190000" , 
+		"long" : "-51.182390000", 
+		"estado": "Exec"
+		}
+		,
+		{
+		"id": 20,
+		"numero": 3 ,
+		"tipo": "Comercial",
+		"tmp_acum_rota": 140 ,
+		"custo": 0 ,
+		"datahora_chegada": " 06-02-2013T14:35:00Z" ,
+		"datahora_saida": " 06-02-2013T15:30:00Z" ,
+		"equipe": 244,
+		"lat" : "-29.960490000" , 
+		"long" : "-51.181620000", 
+		"estado": "Exec"
+		}
+		,
+		{
+		"id": 21,
+		"numero": 4 ,
+		"tipo": "Comercial",
+		"tmp_acum_rota": 196 ,
+		"custo": 0 ,
+		"datahora_chegada": " 06-02-2013T15:31:00Z" ,
+		"datahora_saida": " 06-02-2013T16:01:00Z" ,
+		"equipe": 244,
+		"lat" : "-29.963600000" , 
+		"long" : "-51.184270000", 
+		"estado": "Exec"
+		}
+		,
+		{
+		"id": 22,
+		"numero": 5 ,
+		"tipo": "Comercial",
+		"tmp_acum_rota": 226 ,
+		"custo": 0 ,
+		"datahora_chegada": " 06-02-2013T16:01:00Z" ,
+		"datahora_saida": " 06-02-2013T16:31:00Z" ,
+		"equipe": 244,
+		"lat" : "-29.965750000" , 
+		"long" : "-51.186190000", 
+		"estado": "Exec"
+		}
+		,
+		{
+		"id": 23,
+		"numero": 6 ,
+		"tipo": " Emergencial",
+		"tmp_acum_rota": 273 ,
+		"custo": 62.52 ,
+		"datahora_chegada": " 06-02-2013T16:48:00Z" ,
+		"datahora_saida": " 06-02-2013T17:18:00Z" ,
+		"equipe": 244,
+		"lat" : "-29.881582756" , 
+		"long" : "-51.256003245", 
+		"estado": "Exec"
+		}
+		,
+		{
+		"id": 24,
+		"numero": 7 ,
+		"tipo": " Emergencial",
+		"tmp_acum_rota": 303 ,
+		"custo": 62.52 ,
+		"datahora_chegada": " 06-02-2013T17:18:00Z" ,
+		"datahora_saida": " 06-02-2013T17:48:00Z" ,
+		"equipe": 244,
+		"lat" : "-29.881582766" , 
+		"long" : "-51.256003265", 
+		"estado": "Exec"
+		}
+		,
+		{
+		"id": 25,
+		"numero": 1 ,
+		"tipo": "Comercial",
+		"tmp_acum_rota": 18 ,
+		"custo": 0 ,
+		"datahora_chegada": " 06-02-2013T06:39:00Z" ,
+		"datahora_saida": " 06-02-2013T07:34:00Z" ,
+		"equipe": 913,
+		"lat" : "-29.695060000", 
+		"long": "-53.725150000",
+		"estado": "Plan"
+		}
+		,
+		{
+		"id": 26,
+		"numero": 2 ,
+		"tipo": "Comercial",
+		"tmp_acum_rota": 73 ,
+		"custo": 0 ,
+		"datahora_chegada": " 06-02-2013T07:34:00Z" ,
+		"datahora_saida": " 06-02-2013T08:08:00Z" ,
+		"equipe": 913,
+		"lat" : "-29.694800000", 
+		"long": "-53.724410000",
+		"estado": "Plan"
+		}
+		,
+		{
+		"id": 27,
+		"numero": 3 ,
+		"tipo": "Comercial",
+		"tmp_acum_rota": 109 ,
+		"custo": 0 ,
+		"datahora_chegada": " 06-02-2013T08:10:00Z" ,
+		"datahora_saida": " 06-02-2013T09:05:00Z" ,
+		"equipe": 913,
+		"lat" : "-29.704240000", 
+		"long": "-53.714140000",
+		"estado": "Plan"
+		}
+		,
+		{
+		"id": 28,
+		"numero": 4 ,
+		"tipo": "Comercial",
+		"tmp_acum_rota": 164 ,
+		"custo": 0 ,
+		"datahora_chegada": " 06-02-2013T09:06:00Z" ,
+		"datahora_saida": " 06-02-2013T10:01:00Z" ,
+		"equipe": 913,
+		"lat" : "-29.701830000", 
+		"long": "-53.711160000",
+		"estado": "Plan"
+		}
+		,
+		{
+		"id": 29,
+		"numero": 5 ,
+		"tipo": "Comercial",
+		"tmp_acum_rota": 235 ,
+		"custo": 0 ,
+		"datahora_chegada": " 06-02-2013T10:17:00Z" ,
+		"datahora_saida": " 06-02-2013T11:12:00Z" ,
+		"equipe": 913,
+		"lat" : "-29.647740780", 
+		"long": "-53.619723450",
+		"estado": "Plan"
+		}
+		,
+		{
+		"id": 30,
+		"numero": 6 ,
+		"tipo": "Comercial",
+		"tmp_acum_rota": 307 ,
+		"custo": 0 ,
+		"datahora_chegada": " 06-02-2013T11:28:00Z" ,
+		"datahora_saida": " 06-02-2013T12:48:00Z" ,
+		"equipe": 913,
+		"lat" : "-29.695670000", 
+		"long": "-53.719870000",
+		"estado": "Plan"
+		}
+		,
+		{
+		"id": 31,
+		"numero": 7 ,
+		"tipo": "Comercial",
+		"tmp_acum_rota": 388 ,
+		"custo": 0 ,
+		"datahora_chegada": " 06-02-2013T12:50:00Z" ,
+		"datahora_saida": " 06-02-2013T13:45:00Z" ,
+		"equipe": 913,
+		"lat" : "-29.702679240", 
+		"long": "-53.717738050",
+		"estado": "Plan"
+		}			
+		,
+		{
+		"id": 32,
+		"numero": 8 ,
+		"tipo": "Comercial",
+		"tmp_acum_rota": 448 ,
+		"custo": 0 ,
+		"datahora_chegada": " 06-02-2013T13:49:00Z" ,
+		"datahora_saida": " 06-02-2013T14:19:00Z" ,
+		"equipe": 913,
+		"lat" : "-29.683388090", 
+		"long": "-53.694827340",
+		"estado": "Plan"
+		}
+		,
+		{
+		"id": 33,
+		"numero": 1 ,
+		"tipo": "Comercial",
+		"tmp_acum_rota": 19 ,
+		"custo": 0 ,
+		"datahora_chegada": " 06-02-2013T06:41:00Z" ,
+		"datahora_saida": " 06-02-2013T06:54:00Z" ,
+		"equipe": 913,
+		"lat" : "-29.695060000", 
+		"long": "-53.725150000", 
+		"estado": "Exec"
+		}
+		,
+		{
+		"id": 34,
+		"numero": 2 ,
+		"tipo": "Comercial",
+		"tmp_acum_rota": 51 ,
+		"custo": 0 ,
+		"datahora_chegada": " 06-02-2013T07:13:00Z" ,
+		"datahora_saida": " 06-02-2013T07:59:00Z" ,
+		"equipe": 913,
+		"lat" : "-29.694800000", 
+		"long": "-53.724410000", 
+		"estado": "Exec"
+		}
+		,
+		{
+		"id": 35,
+		"numero": 3 ,
+		"tipo": "Emergencial",
+		"tmp_acum_rota": 132 ,
+		"custo": 3.59 ,
+		"datahora_chegada": " 06-02-2013T08:34:00Z" ,
+		"datahora_saida": " 06-02-2013T11:22:00Z" ,
+		"equipe": 913,
+		"lat" : "-29.695557731", 
+		"long": "-53.832447185", 
+		"estado": "Exec"
+		}
+		,
+		{
+		"id": 36,
+		"numero": 4 ,
+		"tipo": "Emergencial",
+		"tmp_acum_rota": 394 ,
+		"custo": 4.42 ,
+		"datahora_chegada": " 06-02-2013T12:56:00Z" ,
+		"datahora_saida": " 06-02-2013T13:06:00Z" ,
+		"equipe": 913,
+		"lat" : "-29.695630000", 
+		"long": "-53.768200000", 
+		"estado": "Exec"
+		}
+		,
+		{
+		"id": 37,
+		"numero": 5 ,
+		"tipo": "Emergencial",
+		"tmp_acum_rota": 435 ,
+		"custo": 4.42 ,
+		"datahora_chegada": " 06-02-2013T13:37:00Z" ,
+		"datahora_saida": " 06-02-2013T14:31:00Z" ,
+		"equipe": 913,
+		"lat" : "-29.671910000", 
+		"long": "-53.828410000", 
+		"estado": "Exec"
+		}
+		,
+		{
+		"id": 38,
+		"numero": 6 ,
+		"tipo": "Emergencial",
+		"tmp_acum_rota": 521 ,
+		"custo": 1.57 ,
+		"datahora_chegada": " 06-02-2013T15:03:00Z" ,
+		"datahora_saida": " 06-02-2013T15:35:00Z" ,
+		"equipe": 913,
+		"lat" : "-29.676020000", 
+		"long": "-53.789970000", 
+		"estado": "Exec"
+		}
+]

@@ -1,2 +1,5 @@
 export const ADD_TO_MAP = 'ADD_TO_MAP'
 export const RECEIVE_BASES = 'RECEIVE_BASES'
+export const RECEIVE_ORDEM = 'RECEIVE_ORDEM'
+export const SELECT_BASE = 'SELECT_BASE'
+export const SELECT_EQUIPE = 'SELECT_EQUIPE'
