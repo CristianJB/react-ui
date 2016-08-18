@@ -21,7 +21,7 @@ const MainApp = () => (
 
 export default (
   <Route path="/" component={MainApp}>
-      <Route path="pladin"
-             component={MainApp} />
+      <Route path="pladin" component={MainApp} />
+      <Route path="react-ui" component={MainApp} />
   </Route>
 )
