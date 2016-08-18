@@ -12,8 +12,10 @@
 
 - Como publicar:
 
-0 - Abrir o terminal (Alt+F12)
+Setup (fazer uma única vez): git clone https://github.com/viniciusjg/pladin.git --branch gh-pages web/react-ui/build 
 
-1 - npm run build
+1 - Abrir o terminal (Alt+F12)
 
-2 - npm run deploy
+2 - npm run build
+
+3 - npm run deploy

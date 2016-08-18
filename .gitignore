@@ -3,6 +3,8 @@ build/app.js
 build/style.css
 build/*.js
 
+*-compiled.js*
+
 # Logs
 logs
 *.log

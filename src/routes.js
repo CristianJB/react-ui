@@ -14,15 +14,14 @@ const muiTheme = getMuiTheme({
 
 const MainApp = () => (
     <MuiThemeProvider muiTheme={muiTheme}>
-      <App
-        menuBasesItems={['Selecione a base','Santa Maria', 'Canoas']}
-        menuEquipesItems={['Selecione a equipe','913', '931']}
-      />
+      <App/>
     </MuiThemeProvider>
 );
 
 
 export default (
   <Route path="/" component={MainApp}>
+      <Route path="pladin"
+             component={MainApp} />
   </Route>
 )

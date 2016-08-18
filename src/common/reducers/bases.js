@@ -11,7 +11,7 @@ function selectId(state = initialState, action) {
     case RECEIVE_BASES:
       return state
     case SELECT_BASE:
-      return Object.assign({}, state, action.id);
+      return Object.assign({}, state, action.id, {"id_equipe": 0});
     case SELECT_EQUIPE:
       return Object.assign({}, state, action.id_equipe);
     default:

@@ -1,12 +1,12 @@
 {
-  "name": "Essential React",
-  "description": "A minimal skeleton for building testable React apps using Babel",
+  "name": "React UI",
+  "description": "Interface visual usando React",
   "keywords": [
     "react",
     "babel",
     "starter"
   ],
-  "repository": "https://github.com/pheuter/essential-react",
+  "repository": "https://github.com/viniciusjg/pladin",
   "logo": "https://dl.dropboxusercontent.com/u/1803181/essential-react-logo.png",
   "env": {
     "PRODUCTION": "true",
